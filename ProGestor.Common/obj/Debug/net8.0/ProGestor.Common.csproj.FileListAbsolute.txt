@@ -1,0 +1,13 @@
+/Users/anyelovinzen/RiderProjects/ProGestor.WebApplication.final/ProGestor.Common/bin/Debug/net8.0/ProGestor.Common.deps.json
+/Users/anyelovinzen/RiderProjects/ProGestor.WebApplication.final/ProGestor.Common/bin/Debug/net8.0/ProGestor.Common.dll
+/Users/anyelovinzen/RiderProjects/ProGestor.WebApplication.final/ProGestor.Common/bin/Debug/net8.0/ProGestor.Common.pdb
+/Users/anyelovinzen/RiderProjects/ProGestor.WebApplication.final/ProGestor.Common/obj/Debug/net8.0/ProGestor.Common.csproj.AssemblyReference.cache
+/Users/anyelovinzen/RiderProjects/ProGestor.WebApplication.final/ProGestor.Common/obj/Debug/net8.0/ProGestor.Common.GeneratedMSBuildEditorConfig.editorconfig
+/Users/anyelovinzen/RiderProjects/ProGestor.WebApplication.final/ProGestor.Common/obj/Debug/net8.0/ProGestor.Common.AssemblyInfoInputs.cache
+/Users/anyelovinzen/RiderProjects/ProGestor.WebApplication.final/ProGestor.Common/obj/Debug/net8.0/ProGestor.Common.AssemblyInfo.cs
+/Users/anyelovinzen/RiderProjects/ProGestor.WebApplication.final/ProGestor.Common/obj/Debug/net8.0/ProGestor.Common.csproj.CoreCompileInputs.cache
+/Users/anyelovinzen/RiderProjects/ProGestor.WebApplication.final/ProGestor.Common/obj/Debug/net8.0/ProGestor.Common.sourcelink.json
+/Users/anyelovinzen/RiderProjects/ProGestor.WebApplication.final/ProGestor.Common/obj/Debug/net8.0/ProGestor.Common.dll
+/Users/anyelovinzen/RiderProjects/ProGestor.WebApplication.final/ProGestor.Common/obj/Debug/net8.0/refint/ProGestor.Common.dll
+/Users/anyelovinzen/RiderProjects/ProGestor.WebApplication.final/ProGestor.Common/obj/Debug/net8.0/ProGestor.Common.pdb
+/Users/anyelovinzen/RiderProjects/ProGestor.WebApplication.final/ProGestor.Common/obj/Debug/net8.0/ref/ProGestor.Common.dll

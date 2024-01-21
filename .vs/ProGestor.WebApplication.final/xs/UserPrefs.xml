@@ -1,0 +1,20 @@
+﻿<Properties StartupConfiguration="{57E3B465-E253-4CA3-8D64-ECE934D4CCBE}|https">
+  <MonoDevelop.Ide.ItemProperties.ProGestor.WebApplication.final PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workbench>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="ProGestor.WebApplication.final">
+            <Node name="ProGestor.WebApplication.final" selected="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+</Properties>

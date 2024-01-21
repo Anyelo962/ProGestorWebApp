@@ -1,0 +1,156 @@
+﻿@page
+@using ProGestor.Common.Const
+@model RegisterModel
+@{
+    ViewData["Title"] = "";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+ <div class="">
+     <div>
+         <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+             <div class="authincation h-100">
+                 <div class="container h-100">
+                     <div class="row justify-content-center h-100 align-items-center">
+                         <div class="col-md-6">
+                             <div class="authincation-content">
+                                 <div class="row no-gutters">
+                                     <div class="col-xl-12">
+                                         <div class="auth-form">
+                                             <div class="text-center mb-3">
+                                                 <a><img src="~/gymove/images/engineers.png" alt=""></a>
+                                             </div>
+                                             <h4 class="text-center mb-4 ">Crear mi cuenta</h4>
+                                             <div class="form-group">
+                                                 <label asp-for="Input.Name" class="mb-1 form-label">Nombre de usuario</label> 
+                                                 <input asp-for="Input.Name" class="form-control" placeholder="Nombre de usuario"/>
+                                                 <span asp-validation-for="Input.Name" class="text-danger"></span>
+                                             </div>
+                                             
+                                             <div class="form-group">
+                                                 <label asp-for="Input.LastName" class="mb-1 form-label">Apellido</label> 
+                                                 <input asp-for="Input.LastName" class="form-control" placeholder="Gonzales matos"/>
+                                                 <span asp-validation-for="Input.LastName" class="text-danger"></span>
+                                         
+                                             </div>
+
+                                             <div class="form-group">
+                                                 <label asp-for="Input.Email" class="mb-1 form-label">Correo electronico</label>
+                                                 <input asp-for="Input.Email" type="email" class="form-control" placeholder="hello@example.com">
+                                                 <span asp-validation-for="Input.Email"></span>
+                                             </div>
+                                             
+                                             <div class="form-group">
+                                                 <label asp-for="Input.NumberPhone" class="mb-1 form-label">Numero de contacto</label>
+                                                 <input asp-for="Input.NumberPhone" type="tel" class="form-control" placeholder="numero telefónico">
+                                                 <span asp-validation-for="Input.NumberPhone"></span>
+                                             </div>
+                                             
+                                             <div class="form-group">
+                                                 <label>Seleccione su genero</label>
+                                                 <select class="form-control default-select" id="sel1">
+                                                     <option>Masculino</option>
+                                                     <option>Femenino</option>
+                                                 </select>
+                                             </div>
+                                             
+                                             <div class="form-group">
+                                                 <label>Ciudad</label>
+                                                 <select class="form-control default-select" id="sel1">
+                                                     <option>Santo domingo</option>
+                                                     <option>San pedro de macorís</option>
+                                                 </select>
+                                             </div>
+
+                                             <div class="mb-4 position-relative">
+                                                 <label class="mb-1 form-label">Contraseña</label>
+                                                 <input asp-for="Input.Password" type="password" id="dz-password" class="form-control" placeholder="123456">
+                                                 <span class="show-pass eye">
+                                                     <i class="fa fa-eye-slash"></i>
+                                                     <i class="fa fa-eye"></i>
+                                                 </span>
+                                                 <span asp-validation-for="Input.Password"></span>
+                                             </div>
+                                             
+                                             <div class="mb-4 position-relative">
+                                                 <label class="mb-1 form-label">Confirme su contraseña</label>
+                                                 <input asp-for="Input.ConfirmPassword" type="password" id="dz-password" class="form-control" placeholder="123456">
+                                                 <span class="show-pass eye">
+                                                     <i class="fa fa-eye-slash"></i>
+                                                     <i class="fa fa-eye"></i>
+                                                 </span>
+                                                 <span asp-validation-for="Input.ConfirmPassword"></span>
+                                             </div>
+                                             
+                                             @if (User.IsInRole(Rols.Admin))
+                                             {
+                                                 <div class="form-group">
+                                                     <label>Seleccione el rol</label>
+                                                     <select asp-for="Input.SelectedRole" class="form-control default-select" id="sel1">
+                                                         <option name="rol_name" value="@Rols.Admin">Administrador</option>
+                                                         <option name="rol_name" value="@Rols.Employee">Empleado</option>
+                                                         <option name="rol_name" value="@Rols.Client">Cliente</option>
+                                                     </select>
+                                                 </div>
+                                             }
+                                            
+                                             <div class="text-center mt-4">
+                                                 <button id="" type="submit" class="btn btn-primary light  btn-block">Registrarme</button>
+                                             </div>
+                                         </div>
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+           
+         </form>
+         @* <div class="new-account mt-3"> *@
+         @*     <p>¿Tienes una cuenta? <a class="text-primary" href="@Url.Action("", "")">Iniciar sesión</a></p> *@
+         @* </div> *@
+    </div>
+</div>
+@*      <div class="col-md-6 col-md-offset-2"> *@
+@*          <section> *@
+@*              <h3>Use another service to register.</h3> *@
+@*              <hr /> *@
+@*              @{ *@
+@*                  if ((Model.ExternalLogins?.Count ?? 0) == 0) *@
+@*                  { *@
+@*                      <div> *@
+@*                          <p> *@
+@*                              There are no external authentication services configured. See this <a href="https://go.microsoft.com/fwlink/?LinkID=532715">article *@
+@*                                  about setting up this ASP.NET application to support logging in via external services</a>. *@
+@*                          </p> *@
+@*                      </div> *@
+@*                  } *@
+@*                  else *@
+@*                  { *@
+@*                      <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal"> *@
+@*                          <div> *@
+@*                              <p> *@
+@*                                  @foreach (var provider in Model.ExternalLogins!) *@
+@*                                  { *@
+@*                                      <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button> *@
+@*                                  } *@
+@*                              </p> *@
+@*                          </div> *@
+@*                      </form> *@
+@*                  } *@
+@*              } *@
+@*          </section> *@
+@*      </div> *@
+@* *@
+@* @section Scripts { *@
+@*     <partial name="_ValidationScriptsPartial" /> *@
+@* } *@
+@section Scripts
+{
+    <script src="gymove/vendor/global/global.min.js"></script>
+    <script src="gymove/vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
+    <script src="gymove/js/custom.min.js"></script>
+    <script src="gymove/js/deznav-init.js"></script>
+}

@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProGestor.WebApplication.final", "ProGestor.WebApplication.final\ProGestor.WebApplication.final.csproj", "{57E3B465-E253-4CA3-8D64-ECE934D4CCBE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProGestor.Common", "ProGestor.Common\ProGestor.Common.csproj", "{51B7C99A-EA08-4058-AFF8-B5FAEBD334E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProGestor.Infraestruture", "ProGestor.Infraestruture\ProGestor.Infraestruture.csproj", "{40A3DC32-7033-4527-9F37-4BE710EC1CB3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{57E3B465-E253-4CA3-8D64-ECE934D4CCBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57E3B465-E253-4CA3-8D64-ECE934D4CCBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57E3B465-E253-4CA3-8D64-ECE934D4CCBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57E3B465-E253-4CA3-8D64-ECE934D4CCBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51B7C99A-EA08-4058-AFF8-B5FAEBD334E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51B7C99A-EA08-4058-AFF8-B5FAEBD334E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51B7C99A-EA08-4058-AFF8-B5FAEBD334E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51B7C99A-EA08-4058-AFF8-B5FAEBD334E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40A3DC32-7033-4527-9F37-4BE710EC1CB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40A3DC32-7033-4527-9F37-4BE710EC1CB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40A3DC32-7033-4527-9F37-4BE710EC1CB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40A3DC32-7033-4527-9F37-4BE710EC1CB3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
