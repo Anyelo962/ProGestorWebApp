@@ -266,3 +266,4 @@
 /Users/anyelovinzen/RiderProjects/ProGestor.WebApplication.final/ProGestor.WebApplication.final/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.Relational.Design.dll
 /Users/anyelovinzen/RiderProjects/ProGestor.WebApplication.final/ProGestor.WebApplication.final/bin/Debug/net8.0/ProGestor.Infraestruture.dll
 /Users/anyelovinzen/RiderProjects/ProGestor.WebApplication.final/ProGestor.WebApplication.final/bin/Debug/net8.0/ProGestor.Infraestruture.pdb
+/Users/anyelovinzen/RiderProjects/ProGestor.WebApplication.final/ProGestor.WebApplication.final/obj/Debug/net8.0/ProGestor.WebApplication.final.sourcelink.json

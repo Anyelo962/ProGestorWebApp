@@ -5,7 +5,7 @@
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="ProGestor.WebApplication.final">
-            <Node name="ProGestor.WebApplication.final" selected="True" />
+            <Node name="ProGestor.WebApplication.final" expanded="True" selected="True" />
           </Node>
         </State>
       </Pad>
