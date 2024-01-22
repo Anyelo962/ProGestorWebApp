@@ -22,15 +22,19 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Areas\Admin\Controllers\" />
-      <Folder Include="Areas\Admin\Views\" />
-      <Folder Include="Areas\Client\Controllers\" />
-      <Folder Include="Areas\Client\Views\" />
+      <ProjectReference Include="..\ProGestor.Common\ProGestor.Common.csproj" />
+      <ProjectReference Include="..\ProGestor.Infraestruture\ProGestor.Infraestruture.csproj" />
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\ProGestor.Common\ProGestor.Common.csproj" />
-      <ProjectReference Include="..\ProGestor.Infraestruture\ProGestor.Infraestruture.csproj" />
+      <_ContentIncludedByDefault Remove="Views\Ajax\Featuredmenulist.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Ajax\Foodmenulist.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Ajax\Foodmenulist1.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Ajax\Foodmenulist2.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Ajax\Foodmenulist3.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Ajax\Recentactivities.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Ajax\Trendingingridients.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Home\Index.cshtml" />
     </ItemGroup>
 
 </Project>

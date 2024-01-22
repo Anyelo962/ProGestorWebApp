@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <partial name="ProGestor/_Meta" />
+    <title>@ViewData["Title"] - ProGestor</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="~/gymove/images/favicon.png">
+    <!-- Bottom CSS -->
+    @RenderSection("gymove_style", false)
+    <link href="~/gymove/vendor/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet">
+    <link href="~/gymove/css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body class="h-100">
+<partial name="ProGestor/_PreLoader" />
+<!--**********************************
+Main wrapper start
+***********************************-->
+<div class="main-wrapper">
+    <partial name="ProGestor/_NavHeader" />
+    <partial name="ProGestor/_Header" />
+    <partial name="ProGestor/_Sidebar" />
+    @RenderBody()
+    <partial name="ProGestor/_Footer" />
+</div>
+
+<!--**********************************
+Main wrapper end
+***********************************-->
+@* <partial name="gymove/_Modal" /> *@
+@* <partial name="gymove/_DietMenu" /> *@
+@* <partial name="gymove/_FilterModel" /> *@
+@RenderSection("gymove_script", false)
+</body>
+</html>
