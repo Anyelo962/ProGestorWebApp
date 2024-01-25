@@ -79,7 +79,7 @@ namespace ProGestor.WebApplication.final.Areas.Identity.Pages.Account
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("MainPage", "Home", new {area = "Client"});
                 }
                 if (result.RequiresTwoFactor)
                 {

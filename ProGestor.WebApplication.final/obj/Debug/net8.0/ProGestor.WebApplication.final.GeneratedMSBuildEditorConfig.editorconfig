@@ -42,6 +42,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQ2xpZW50L1ZpZXdzL0hvbWUvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/anyelovinzen/RiderProjects/ProGestor.WebApplication.final/ProGestor.WebApplication.final/Areas/Client/Views/Home/MainPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQ2xpZW50L1ZpZXdzL0hvbWUvTWFpblBhZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/anyelovinzen/RiderProjects/ProGestor.WebApplication.final/ProGestor.WebApplication.final/Areas/Client/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQ2xpZW50L1ZpZXdzL19WaWV3SW1wb3J0cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -52,6 +56,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/Users/anyelovinzen/RiderProjects/ProGestor.WebApplication.final/ProGestor.WebApplication.final/Areas/Identity/Pages/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9Mb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/anyelovinzen/RiderProjects/ProGestor.WebApplication.final/ProGestor.WebApplication.final/Areas/Identity/Pages/Account/Logout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9Mb2dvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/anyelovinzen/RiderProjects/ProGestor.WebApplication.final/ProGestor.WebApplication.final/Areas/Identity/Pages/Account/Register.cshtml]

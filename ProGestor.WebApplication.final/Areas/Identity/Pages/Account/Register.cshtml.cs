@@ -16,6 +16,7 @@ using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.CodeAnalysis.Elfie.Serialization;
 using ProGestor.Common.Const;
 using ProGestor.Common.Entities;
+using ProGestor.Common.Interfaces;
 
 namespace ProGestor.WebApplication.final.Areas.Identity.Pages.Account
 {
@@ -28,6 +29,8 @@ namespace ProGestor.WebApplication.final.Areas.Identity.Pages.Account
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
         private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly ICityRepository _cityRepository;
+        private readonly IGenderRepository _genderRepository;
 
         public RegisterModel(
             UserManager<User> userManager,
@@ -35,7 +38,8 @@ namespace ProGestor.WebApplication.final.Areas.Identity.Pages.Account
             SignInManager<User> signInManager,
             ILogger<RegisterModel> logger,
             IEmailSender emailSender,
-            RoleManager<IdentityRole> roleManager)
+            RoleManager<IdentityRole> roleManager, 
+            ICityRepository cityRepository, IGenderRepository genderRepository)
         {
             _userManager = userManager;
             _userStore = userStore;
@@ -44,15 +48,22 @@ namespace ProGestor.WebApplication.final.Areas.Identity.Pages.Account
             _logger = logger;
             _emailSender = emailSender;
             _roleManager = roleManager;
+            _cityRepository = cityRepository;
+            _genderRepository = genderRepository;
         }
         
         [BindProperty]
         public InputModel Input { get; set; }
+        [BindProperty]
+        public int CitySelected { get; set; }
+        [BindProperty]
+        public int GenderSelected { get; set; }
         
         public string ReturnUrl { get; set; }
         
         public IList<AuthenticationScheme> ExternalLogins { get; set; }
-        
+        public IEnumerable<City> Cities { get; set; }
+        public IEnumerable<Gender> Genders { get; set; }
         public class InputModel
         {
             
@@ -90,6 +101,8 @@ namespace ProGestor.WebApplication.final.Areas.Identity.Pages.Account
         {
             ReturnUrl = returnUrl;
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
+            Cities = await _cityRepository.GetAll();
+            Genders = await _genderRepository.GetAll();
         }
 
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
@@ -99,9 +112,9 @@ namespace ProGestor.WebApplication.final.Areas.Identity.Pages.Account
             if (ModelState.IsValid)
             {
                 var user = CreateUser();
-                user.genderId = 1;
+                user.genderId = GenderSelected;
                 user.numberPhone = Input.NumberPhone;
-                user.CityId = 1; //Input.CityId;
+                user.CityId = CitySelected;
                 user.UserName = Input.Name;
                 user.lastName = Input.LastName;
                 user.EmailConfirmed = true;
@@ -121,7 +134,6 @@ namespace ProGestor.WebApplication.final.Areas.Identity.Pages.Account
                         await _roleManager.CreateAsync(new IdentityRole(Rols.Client));
                     }
                     
-
                     switch (Input.SelectedRole)
                     {
                        case Rols.Admin:
@@ -142,7 +154,7 @@ namespace ProGestor.WebApplication.final.Areas.Identity.Pages.Account
                     
                     var userId = await _userManager.GetUserIdAsync(user);
                     await _signInManager.SignInAsync(user, isPersistent: false);
-                    return RedirectToAction("index", "Home");
+                    return RedirectToAction("MainPage", "Home", new { area = "Client"});
                     // var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                     // code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
                     // var callbackUrl = Url.Page(

@@ -16,10 +16,15 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<ProGestorDbContext>(options =>
     options.UseSqlServer(connectionString), ServiceLifetime.Scoped);
 
+// builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+//     .AddEntityFrameworkStores<ProGestorDbContext>();
+
 builder.Services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
+builder.Services.AddTransient<ICityRepository, CityRepository>();
+builder.Services.AddTransient<IGenderRepository, GenderRepository>();
 
-builder.Services.AddIdentity<User, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
+builder.Services.AddIdentity<User, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = false)
     .AddEntityFrameworkStores<ProGestorDbContext>()
     .AddDefaultUI();
 
