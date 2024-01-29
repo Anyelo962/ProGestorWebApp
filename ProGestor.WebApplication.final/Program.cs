@@ -23,6 +23,9 @@ builder.Services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddTransient<ICityRepository, CityRepository>();
 builder.Services.AddTransient<IGenderRepository, GenderRepository>();
+builder.Services.AddTransient<IStatusProjectRepository, StatusProjectRepository>();
+builder.Services.AddTransient<IProjectTypeRepository, ProjectTypeRepository>();
+builder.Services.AddTransient<IProjectRepository, ProjectRepository>();
 
 builder.Services.AddIdentity<User, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = false)
     .AddEntityFrameworkStores<ProGestorDbContext>()

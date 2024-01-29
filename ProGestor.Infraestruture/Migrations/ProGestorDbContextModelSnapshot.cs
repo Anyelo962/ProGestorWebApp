@@ -215,6 +215,79 @@ namespace ProGestor.Infraestruture.Migrations
                     b.ToTable("Genders");
                 });
 
+            modelBuilder.Entity("ProGestor.Common.Entities.Project", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("DateProjectEnd")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateProjectStart")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("ProjectTypeId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("StatusProjectId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProjectTypeId");
+
+                    b.HasIndex("StatusProjectId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Projects");
+                });
+
+            modelBuilder.Entity("ProGestor.Common.Entities.ProjectType", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ProjectTypes");
+                });
+
+            modelBuilder.Entity("ProGestor.Common.Entities.StatusProject", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("StatusProjects");
+                });
+
             modelBuilder.Entity("ProGestor.Common.Entities.User", b =>
                 {
                     b.Property<string>("Id")
@@ -269,6 +342,10 @@ namespace ProGestor.Infraestruture.Migrations
                     b.Property<string>("UserName")
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("firstName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("genderId")
                         .HasColumnType("int");
@@ -360,6 +437,33 @@ namespace ProGestor.Infraestruture.Migrations
                     b.Navigation("City");
                 });
 
+            modelBuilder.Entity("ProGestor.Common.Entities.Project", b =>
+                {
+                    b.HasOne("ProGestor.Common.Entities.ProjectType", "ProjectType")
+                        .WithMany("Projects")
+                        .HasForeignKey("ProjectTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ProGestor.Common.Entities.StatusProject", "StatusProject")
+                        .WithMany("ProgProjects")
+                        .HasForeignKey("StatusProjectId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ProGestor.Common.Entities.User", "User")
+                        .WithMany("Projects")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ProjectType");
+
+                    b.Navigation("StatusProject");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("ProGestor.Common.Entities.User", b =>
                 {
                     b.HasOne("ProGestor.Common.Entities.City", "City")
@@ -389,6 +493,21 @@ namespace ProGestor.Infraestruture.Migrations
             modelBuilder.Entity("ProGestor.Common.Entities.Gender", b =>
                 {
                     b.Navigation("Users");
+                });
+
+            modelBuilder.Entity("ProGestor.Common.Entities.ProjectType", b =>
+                {
+                    b.Navigation("Projects");
+                });
+
+            modelBuilder.Entity("ProGestor.Common.Entities.StatusProject", b =>
+                {
+                    b.Navigation("ProgProjects");
+                });
+
+            modelBuilder.Entity("ProGestor.Common.Entities.User", b =>
+                {
+                    b.Navigation("Projects");
                 });
 #pragma warning restore 612, 618
         }

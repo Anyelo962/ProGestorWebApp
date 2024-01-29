@@ -50,14 +50,17 @@ namespace ProGestor.WebApplication.final.Areas.Identity.Pages.Account
             _roleManager = roleManager;
             _cityRepository = cityRepository;
             _genderRepository = genderRepository;
+            
+            Cities =  _cityRepository.GetAll().Result.ToList();
+            Genders = _genderRepository.GetAll().Result.ToList();
+            
         }
         
         [BindProperty]
         public InputModel Input { get; set; }
-        [BindProperty]
-        public int CitySelected { get; set; }
-        [BindProperty]
-        public int GenderSelected { get; set; }
+
+        [BindProperty] public int CitySelected { get; set; } = 0;
+        [BindProperty] public int GenderSelected { get; set; } = 0;
         
         public string ReturnUrl { get; set; }
         
@@ -74,24 +77,23 @@ namespace ProGestor.WebApplication.final.Areas.Identity.Pages.Account
             [Display(Name = "Email")]
             public string Email { get; set; }
             [Required]
-            [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
+            [StringLength(100, ErrorMessage = "El {0} debe tener al menos {2} y un máximo de {1} caracteres.", MinimumLength = 6)]
             [DataType(DataType.Password)]
             [Display(Name = "Contraseña")]
             public string Password { get; set; }
             [DataType(DataType.Password)]
             [Display(Name = "Confirmar contraseña")]
-            [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+            [Compare("Password", ErrorMessage = "La contraseña y la contraseña de confirmación no coinciden.")]
             public string ConfirmPassword { get; set; }
+            [DataType(DataType.Text)]
+            [Display(Name = "Nombre")]
+            public string firstName { get; set; }
             [DataType(DataType.Text)]
             [Display(Name = "Apellido")]
             public string LastName { get; set; }
-            [Display(Name = "Sexo")]
-            public int GenderId { get; set; }
             [DataType(DataType.PhoneNumber)]
             [Display(Name = "Numero de teléfono")]
             public string NumberPhone { get; set; }
-            [Display(Name = "Ciudad")]
-            public int CityId { get; set; }
             public string SelectedRole { get; set; }
             
         }
@@ -115,7 +117,7 @@ namespace ProGestor.WebApplication.final.Areas.Identity.Pages.Account
                 user.genderId = GenderSelected;
                 user.numberPhone = Input.NumberPhone;
                 user.CityId = CitySelected;
-                user.UserName = Input.Name;
+                user.firstName = Input.firstName;
                 user.lastName = Input.LastName;
                 user.EmailConfirmed = true;
 
@@ -150,7 +152,7 @@ namespace ProGestor.WebApplication.final.Areas.Identity.Pages.Account
                            break;
                     }
                     
-                    _logger.LogInformation("User created a new account with password.");
+                    _logger.LogInformation("El usuario creó una nueva cuenta con contraseña.");
                     
                     var userId = await _userManager.GetUserIdAsync(user);
                     await _signInManager.SignInAsync(user, isPersistent: false);
@@ -194,9 +196,9 @@ namespace ProGestor.WebApplication.final.Areas.Identity.Pages.Account
             }
             catch
             {
-                throw new InvalidOperationException($"Can't create an instance of '{nameof(User)}'. " +
-                    $"Ensure that '{nameof(User)}' is not an abstract class and has a parameterless constructor, or alternatively " +
-                    $"override the register page in /Areas/Identity/Pages/Account/Register.cshtml");
+                throw new InvalidOperationException($"No se puede crear una instancia de'{nameof(User)}'. " +
+                    $"Asegurarse de que '{nameof(User)}' no es una clase abstracta y tiene un constructor sin parámetros, o alternativamente" +
+                    $"anular la página de registro en /Areas/Identity/Pages/Account/Register.cshtml");
             }
         }
 
@@ -204,7 +206,7 @@ namespace ProGestor.WebApplication.final.Areas.Identity.Pages.Account
         {
             if (!_userManager.SupportsUserEmail)
             {
-                throw new NotSupportedException("The default UI requires a user store with email support.");
+                throw new NotSupportedException("La interfaz de usuario predeterminada requiere una tienda de usuarios con soporte por correo electrónico.");
             }
             return (IUserEmailStore<User>)_userStore;
         }

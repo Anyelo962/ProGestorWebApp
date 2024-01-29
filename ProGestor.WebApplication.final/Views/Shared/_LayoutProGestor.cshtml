@@ -8,6 +8,7 @@
     <!-- Bottom CSS -->
     @RenderSection("gymove_style", false)
     <link href="~/gymove/vendor/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet">
+    <link href="gymove/"/>
     <link href="~/gymove/css/style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 </head>
@@ -30,6 +31,9 @@ Main wrapper end
 @* <partial name="gymove/_Modal" /> *@
 @* <partial name="gymove/_DietMenu" /> *@
 @* <partial name="gymove/_FilterModel" /> *@
-@RenderSection("gymove_script", false)
+@* <script src="~/lib/jquery/dist/jquery.min.js"></script> *@
+@* <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script> *@
+@* <script src="~/js/StatusProject.js" asp-append-version="true"></script> *@
+@await RenderSectionAsync("gymove_script", false)
 </body>
 </html>

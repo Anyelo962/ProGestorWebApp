@@ -3,7 +3,8 @@
 @model RegisterModel
 @{
     ViewData["Title"] = "";
-    Layout = "~/Views/Shared/_LayoutProGestorBlank.cshtml";
+    // Layout = "~/Views/Shared/_LayoutProGestorBlank.cshtml";
+     Layout = "~/Views/Shared/_LayoutProGestorBlank.cshtml";
 }
 
 <h1>@ViewData["Title"]</h1>
@@ -24,9 +25,9 @@
                                             </div>
                                             <h4 class="text-center mb-4 ">Crear mi cuenta</h4>
                                             <div class="form-group">
-                                                <label asp-for="Input.Name" class="mb-1 form-label">Nombre de usuario</label> 
-                                                <input asp-for="Input.Name" class="form-control" placeholder="Nombre de usuario"/>
-                                                <span asp-validation-for="Input.Name" class="text-danger"></span>
+                                                <label asp-for="Input.firstName" class="mb-1 form-label">Nombre de usuario</label> 
+                                                <input asp-for="Input.firstName" class="form-control" placeholder="Nombre de usuario"/>
+                                                <span asp-validation-for="Input.firstName" class="text-danger"></span>
                                             </div>
                                              
                                             <div class="form-group">
@@ -47,7 +48,7 @@
                                                 <input asp-for="Input.NumberPhone" type="tel" class="form-control" placeholder="numero telefónico">
                                                 <span asp-validation-for="Input.NumberPhone"></span>
                                             </div>
-                                             
+                                             @* Verificar porque cuando llamo desde el metodo de iniciar sesion me da error *@
                                             <div class="form-group">
                                                 <label>Seleccione su genero</label>
                                                 <select class="form-control default-select" id="sel1" asp-for="GenderSelected">
@@ -58,7 +59,7 @@
                                                     }
                                                 </select>
                                             </div>
-                                             
+                                            
                                             <div class="form-group">
                                                 <label>Ciudad</label>
                                                 <select class="form-control default-select" id="sel1" asp-for="CitySelected">
@@ -103,8 +104,13 @@
                                             }
                                             
                                             <div class="text-center mt-4">
-                                                <button id="registerUser" type="submit" class="btn btn-primary light  btn-block">Registrarme</button>
+                                                <button type="submit" class="btn btn-primary light  btn-block mb-3">Registrarme</button>
                                             </div>
+                                            
+                                            <div class="text-center">
+                                                <button asp-page="./Login" asp-route-returnUrl="@Model.ReturnUrl" class="btn btn-primary light btn-block">Iniciar sesión</button>
+                                            </div>
+                                            
                                         </div>
                                     </div>
                                 </div>

@@ -1,0 +1,120 @@
+@model ProGestor.WebApplication.final.viewModels.StatusProjectViewModel
+@{
+    ViewData["Title"] = "Proyectos";
+    ViewData["Caption"] = "Estados del proyecto";
+}
+
+<div class="content-body default-height">
+	<div class="container-fluid">
+		<div class="page-titles">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="javascript:void(0)">Proyectos</a></li>
+				<li class="breadcrumb-item active"><a href="javascript:void(0)">Estados del proyecto</a></li>
+			</ol>
+		</div>
+		<!-- Row -->
+		<div class="row">
+			<div class="col-xl-12">
+				<div class="row">
+					<div class="col-xl-4">
+						<div class="filter cm-content-box box-primary">
+							<div class="content-title">
+								<div class="cpa">
+									Agregar nuevo estado
+								</div>
+								<div class="tools">
+									<a href="javascript:void(0);" class="expand SlideToolHeader"><i class="fal fa-angle-down"></i></a>
+								</div>
+							</div>
+							<div class="cm-content-body form excerpt">
+								<div class="card-body">
+									<form asp-controller="StatusProject" asp-area="Admin" asp-action="Add">
+										<div class="mb-3">
+											<label class="form-label">Nombre del estado</label>
+											<input type="text" name="name" value="@(Model?.name ?? "")" class="form-control" placeholder="Ejemp: En proceso">
+										</div>
+										<button type="submit" class="btn btn-primary">Guardar</button>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-8">
+						<div class="filter cm-content-box box-primary">
+							<div class="content-title">
+								<div class="cpa">
+									Lista de estados
+								</div>
+								<div class="tools">
+									<a href="javascript:void(0);" class="expand SlideToolHeader"><i class="fal fa-angle-down"></i></a>
+								</div>
+							</div>
+							<div class="cm-content-body publish-content form excerpt">
+								<div class="card-body py-3">
+									<div class="table-responsive">
+										<table class="table table-striped verticle-middle table-responsive-sm">
+											<thead>
+												<tr>
+													<th scope="col" class="text-black">S.No</th>
+													<th scope="col" class="text-black">Nombre</th>
+													<th scope="col" class="text-black text-end">Acción</th>
+												</tr>
+											</thead>
+											<tbody>
+												
+											@foreach (var item in Model.StatusProjects)
+											{
+												<tr>
+													
+													<td>@item.Id</td>
+													<td>@item.name</td>
+
+													<td class="text-end">
+														<a href="javascript:void(0);">Editar</a>
+														<span>|</span>
+														<a href="javascript:void(0);">Actualizar</a>
+														<span>|</span>
+														<a href="javascript:void(0);">Eliminar</a>
+														<span>|</span>
+
+													</td>
+												</tr>
+												
+											}
+												
+											</tbody>
+											
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--**********************************
+Content body end
+***********************************-->
+@section gymove_style
+	{
+	<!-- Start Page Level CSS -->
+	<link rel="stylesheet" href="~/gymove/vendor/chartist/css/chartist.min.css">
+	<link href="~/gymove/vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
+	<!-- End Page Level CSS -->
+}
+
+@section gymove_script
+	{
+		<!--**********************************
+		Scripts
+		***********************************-->
+		<script src="~/gymove/vendor/global/global.min.js"></script>
+		<script src="~/gymove/vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
+		<!-- Dashboard 1 -->
+		<script src="~/gymove/js/dashboard/cms.js"></script>
+		<script src="~/gymove/js/custom.min.js"></script>
+		<script src="~/gymove/js/deznav-init.js"></script>
+}

@@ -16,4 +16,7 @@ public class ProGestorDbContext: IdentityDbContext<User>
     public DbSet<City> Cities { get; set; }
     public DbSet<Gender> Genders { get; set; }
     public DbSet<User> Users { get; set; }
+    public DbSet<StatusProject> StatusProjects { get; set; }
+    public DbSet<ProjectType> ProjectTypes { get; set; }
+    public DbSet<Project> Projects { get; set; }
 }
