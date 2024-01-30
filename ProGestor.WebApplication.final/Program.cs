@@ -1,5 +1,7 @@
+using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using ProGestor.Common.Entities;
 using ProGestor.Common.Interfaces;
 using ProGestor.Infraestruture.Data;
@@ -11,7 +13,10 @@ var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ??
                        throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews().AddJsonOptions(options =>
+{
+    options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+});
 
 builder.Services.AddDbContext<ProGestorDbContext>(options =>
     options.UseSqlServer(connectionString), ServiceLifetime.Scoped);
@@ -31,6 +36,11 @@ builder.Services.AddIdentity<User, IdentityRole>(options => options.SignIn.Requi
     .AddEntityFrameworkStores<ProGestorDbContext>()
     .AddDefaultUI();
 
+var settings = new JsonSerializerSettings
+{
+    PreserveReferencesHandling = PreserveReferencesHandling.Objects,
+    ReferenceLoopHandling = ReferenceLoopHandling.Serialize,
+};
 
 var app = builder.Build();
 

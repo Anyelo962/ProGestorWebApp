@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "q2Vdqi7L8bCDG3MoaNUSJtjQ1Xe0Juicna9LhHmYxCE=",
+  "Hash": "q/p9deEoT/QAYBhhSSv52AybJXCPM7svq4X6EI+2RaE=",
   "Source": "ProGestor.WebApplication.final",
   "BasePath": "_content/ProGestor.WebApplication.final",
   "Mode": "Default",
@@ -16659,6 +16659,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/gymove/vendor/wnumb/wNumb.js"
+    },
+    {
+      "Identity": "/Users/anyelovinzen/RiderProjects/ProGestor.WebApplication.final/ProGestor.WebApplication.final/wwwroot/js/ProjectType.js",
+      "SourceId": "ProGestor.WebApplication.final",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/anyelovinzen/RiderProjects/ProGestor.WebApplication.final/ProGestor.WebApplication.final/wwwroot/",
+      "BasePath": "_content/ProGestor.WebApplication.final",
+      "RelativePath": "js/ProjectType.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/js/ProjectType.js"
     },
     {
       "Identity": "/Users/anyelovinzen/RiderProjects/ProGestor.WebApplication.final/ProGestor.WebApplication.final/wwwroot/js/site.js",

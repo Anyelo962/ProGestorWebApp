@@ -7,186 +7,175 @@
                     <span class="nav-text">Proyectos</span>
                 </a>
                 <ul aria-expanded="false">
+                    <li><a asp-area="Admin" asp-controller="Project" asp-action="AddProject">Crear proyecto</a></li>
                     <li><a asp-area="Admin" asp-controller="Project" asp-action="Index">Listado de proyectos</a></li>
                     <li><a asp-area="Admin" asp-controller="StatusProject" asp-action="Index">Estados del proyecto</a></li>
-                    <li><a href="@Url.Action("", "")">Workout Statistic</a></li>
-                    <li><a href="@Url.Action("", "")">Workout Plan</a></li>
-                    <li><a href="@Url.Action("", "")">Distance Map</a></li>
-                    <li><a href="@Url.Action("", "")">Diet Food Menu</a></li>
-                    <li><a href="@Url.Action("", "")">Personal Record</a></li>
+                    <li><a asp-area="Admin" asp-controller="ProjectType" asp-action="Index">Tipos de proyectos</a></li>
                 </ul>
             </li>
-            <li>
-                <a class="has-arrow ai-icon" href="javascript:void(0)" aria-expanded="false">
-                    <i class="flaticon-381-television"></i>
-                    <span class="nav-text">Apps</span>
-                </a>
-                <ul aria-expanded="false">
-                    <li><a href="@Url.Action("", "")">Profile</a></li>
-                    <li><a href="@Url.Action("", "")">Post Details</a></li>
-                    <li>
-                        <a class="has-arrow" href="javascript:void(0)" aria-expanded="false">Email</a>
-                        <ul aria-expanded="false">
-                            <li><a href="@Url.Action("", "")">Compose</a></li>
-                            <li><a href="@Url.Action("", "")">Inbox</a></li>
-                            <li><a href="@Url.Action("", "")">Read</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="@Url.Action("", "")">Calendar</a></li>
-                    <li>
-                        <a class="has-arrow" href="javascript:void(0)" aria-expanded="false">Shop</a>
-                        <ul aria-expanded="false">
-                            <li><a href="@Url.Action("", "")">Product Grid</a></li>
-                            <li><a href="@Url.Action("", "")">Product List</a></li>
-                            <li><a href="@Url.Action("", "")">Product Details</a></li>
-                            <li><a href="@Url.Action("", "")">Order</a></li>
-                            <li><a href="@Url.Action("", "")">Checkout</a></li>
-                            <li><a href="@Url.Action("", "")">Invoice</a></li>
-                            <li><a href="@Url.Action("", "")">Customers</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a class="has-arrow ai-icon" href="javascript:void(0)" aria-expanded="false">
-                    <i class="flaticon-381-compact-disc-1"></i>
-                    <span class="nav-text">Icons<span class="badge badge-danger badge-xs ms-1">NEW</span></span>
-                </a>
-                <ul aria-expanded="false">
-                    <li><a href="@Url.Action("", "")">Flaticons</a></li>
-                    <li><a href="@Url.Action("", "")">SVG Icons</a></li>
-                    <li><a href="@Url.Action("", "")">Feather Icons</a></li>
-                </ul>
-            </li>
-            <li>
-                <a class="has-arrow ai-icon" href="javascript:void(0)" aria-expanded="false">
-                    <i class="flaticon-381-briefcase"></i>
-                    <span class="nav-text">CMS<span class="badge badge-danger badge-xs ms-1">NEW</span></span>
-                </a>
-                <ul aria-expanded="false">
-                    <li><a href="@Url.Action("", "")">Content</a></li>
-                    <li><a href="@Url.Action("", "")">Add Content</a></li>
-                    <li><a href="@Url.Action("", "")">Menus</a></li>
-                    <li><a href="@Url.Action("", "")">Email Template</a></li>
-                    <li><a href="@Url.Action("", "")">Add Email</a></li>
-                    <li><a href="@Url.Action("", "")">Blog</a></li>
-                    <li><a href="@Url.Action("", "")">Add Blog</a></li>
-                    <li><a href="@Url.Action("", "")">Blog Category</a></li>
-                </ul>
-            </li>
-            <li>
-                <a class="has-arrow ai-icon" href="javascript:void(0)" aria-expanded="false">
-                    <i class="flaticon-381-controls-3"></i>
-                    <span class="nav-text">Charts</span>
-                </a>
-                <ul aria-expanded="false">
-                    <li><a href="@Url.Action("", "")">Flot</a></li>
-                    <li><a href="@Url.Action("", "")">Morris</a></li>
-                    <li><a href="@Url.Action("", "")">Chartjs</a></li>
-                    <li><a href="@Url.Action("", "")">Chartist</a></li>
-                    <li><a href="@Url.Action("", "")">Sparkline</a></li>
-                    <li><a href="@Url.Action("", "")">Peity</a></li>
-                </ul>
-            </li>
-            <li>
-                <a class="has-arrow ai-icon" href="javascript:void(0)" aria-expanded="false">
-                    <i class="flaticon-381-internet"></i>
-                    <span class="nav-text">Bootstrap</span>
-                </a>
-                <ul aria-expanded="false">
-                    <li><a href="@Url.Action("", "")">Accordion</a></li>
-                    <li><a href="@Url.Action("", "")">Alert</a></li>
-                    <li><a href="@Url.Action("", "")">Badge</a></li>
-                    <li><a href="@Url.Action("", "")">Button</a></li>
-                    <li><a href="@Url.Action("", "")">Modal</a></li>
-                    <li><a href="@Url.Action("", "")">Button Group</a></li>
-                    <li><a href="@Url.Action("", "")">List Group</a></li>
-                    <li><a href="@Url.Action("", "")">Media Object</a></li>
-                    <li><a href="@Url.Action("", "")">Cards</a></li>
-                    <li><a href="@Url.Action("", "")">Carousel</a></li>
-                    <li><a href="@Url.Action("", "")">Dropdown</a></li>
-                    <li><a href="@Url.Action("", "")">Popover</a></li>
-                    <li><a href="@Url.Action("", "")">Progressbar</a></li>
-                    <li><a href="@Url.Action("", "")">Tab</a></li>
-                    <li><a href="@Url.Action("", "")">Typography</a></li>
-                    <li><a href="@Url.Action("", "")">Pagination</a></li>
-                    <li><a href="@Url.Action("", "")">Grid</a></li>
-
-                </ul>
-            </li>
-            <li>
-                <a class="has-arrow ai-icon" href="javascript:void(0)" aria-expanded="false">
-                    <i class="flaticon-381-heart"></i>
-                    <span class="nav-text">Plugins</span>
-                </a>
-                <ul aria-expanded="false">
-                    <li><a href="@Url.Action("", "")">Select 2</a></li>
-                    <li><a href="@Url.Action("", "")">Nestedable</a></li>
-                    <li><a href="@Url.Action("", "")">Noui Slider</a></li>
-                    <li><a href="@Url.Action("", "")">Sweet Alert</a></li>
-                    <li><a href="@Url.Action("", "")">Toastr</a></li>
-                    <li><a href="@Url.Action("", "")">Jqv Map</a></li>
-                    <li><a href="@Url.Action("", "")">Lightgallery</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="@Url.Action("", "")" class="ai-icon" aria-expanded="false">
-                    <i class="flaticon-381-settings-2"></i>
-                    <span class="nav-text">Widget</span>
-                </a>
-            </li>
-            <li>
-                <a class="has-arrow ai-icon" href="javascript:void(0)" aria-expanded="false">
-                    <i class="flaticon-381-notepad"></i>
-                    <span class="nav-text">Forms</span>
-                </a>
-                <ul aria-expanded="false">
-                    <li><a href="@Url.Action("", "")">Form Elements</a></li>
-                    <li><a href="@Url.Action("", "")">Wizard</a></li>
-                    <li><a href="@Url.Action("", "")">Editor</a></li>
-                    <li><a href="@Url.Action("", "")">Pickers</a></li>
-                    <li><a href="@Url.Action("", "")">Jquery Validate</a></li>
-                </ul>
-            </li>
-            <li>
-                <a class="has-arrow ai-icon" href="javascript:void(0)" aria-expanded="false">
-                    <i class="flaticon-381-network"></i>
-                    <span class="nav-text">Table</span>
-                </a>
-                <ul aria-expanded="false">
-                    <li><a href="@Url.Action("", "")">Bootstrap</a></li>
-                    <li><a href="@Url.Action("", "")">Datatable</a></li>
-                </ul>
-            </li>
-            <li>
-                <a class="has-arrow ai-icon" href="javascript:void(0)" aria-expanded="false">
-                    <i class="flaticon-381-layer-1"></i>
-                    <span class="nav-text">Pages</span>
-                </a>
-                <ul aria-expanded="false">
-                    <li><a href="@Url.Action("", "")">Register</a></li>
-                    <li><a href="@Url.Action("", "")">Login</a></li>
-                    <li>
-                        <a class="has-arrow" href="javascript:void(0)" aria-expanded="false">Error</a>
-                        <ul aria-expanded="false">
-                            <li><a href="@Url.Action("", "")">Error 400</a></li>
-                            <li><a href="@Url.Action("", "")">Error 403</a></li>
-                            <li><a href="@Url.Action("", "")">Error 404</a></li>
-                            <li><a href="@Url.Action("", "")">Error 500</a></li>
-                            <li><a href="@Url.Action("", "")">Error 503</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="@Url.Action("", "")">Lock Screen</a></li>
-                </ul>
-            </li>
+ @*            <li> *@
+ @*                <a class="has-arrow ai-icon" href="javascript:void(0)" aria-expanded="false"> *@
+ @*                    <i class="flaticon-381-television"></i> *@
+ @*                    <span class="nav-text">Apps</span> *@
+ @*                </a> *@
+ @*                <ul aria-expanded="false"> *@
+ @*                    <li><a href="@Url.Action("", "")">Profile</a></li> *@
+ @*                    <li><a href="@Url.Action("", "")">Post Details</a></li> *@
+ @*                    <li> *@
+ @*                        <a class="has-arrow" href="javascript:void(0)" aria-expanded="false">Email</a> *@
+ @*                        <ul aria-expanded="false"> *@
+ @*                            <li><a href="@Url.Action("", "")">Compose</a></li> *@
+ @*                            <li><a href="@Url.Action("", "")">Inbox</a></li> *@
+ @*                            <li><a href="@Url.Action("", "")">Read</a></li> *@
+ @*                        </ul> *@
+ @*                    </li> *@
+ @*                    <li><a href="@Url.Action("", "")">Calendar</a></li> *@
+ @*                    <li> *@
+ @*                        <a class="has-arrow" href="javascript:void(0)" aria-expanded="false">Shop</a> *@
+ @*                        <ul aria-expanded="false"> *@
+ @*                            <li><a href="@Url.Action("", "")">Product Grid</a></li> *@
+ @*                            <li><a href="@Url.Action("", "")">Product List</a></li> *@
+ @*                            <li><a href="@Url.Action("", "")">Product Details</a></li> *@
+ @*                            <li><a href="@Url.Action("", "")">Order</a></li> *@
+ @*                            <li><a href="@Url.Action("", "")">Checkout</a></li> *@
+ @*                            <li><a href="@Url.Action("", "")">Invoice</a></li> *@
+ @*                            <li><a href="@Url.Action("", "")">Customers</a></li> *@
+ @*                        </ul> *@
+ @*                    </li> *@
+ @*                </ul> *@
+ @*            </li> *@
+ @*            <li> *@
+ @*                <a class="has-arrow ai-icon" href="javascript:void(0)" aria-expanded="false"> *@
+ @*                    <i class="flaticon-381-compact-disc-1"></i> *@
+ @*                    <span class="nav-text">Icons<span class="badge badge-danger badge-xs ms-1">NEW</span></span> *@
+ @*                </a> *@
+ @*                <ul aria-expanded="false"> *@
+ @*                    <li><a href="@Url.Action("", "")">Flaticons</a></li> *@
+ @*                    <li><a href="@Url.Action("", "")">SVG Icons</a></li> *@
+ @*                    <li><a href="@Url.Action("", "")">Feather Icons</a></li> *@
+ @*                </ul> *@
+ @*            </li> *@
+ @*            <li> *@
+ @*                <a class="has-arrow ai-icon" href="javascript:void(0)" aria-expanded="false"> *@
+ @*                    <i class="flaticon-381-briefcase"></i> *@
+ @*                    <span class="nav-text">CMS<span class="badge badge-danger badge-xs ms-1">NEW</span></span> *@
+ @*                </a> *@
+ @*                <ul aria-expanded="false"> *@
+ @*                    <li><a href="@Url.Action("", "")">Content</a></li> *@
+ @*                    <li><a href="@Url.Action("", "")">Add Content</a></li> *@
+ @*                    <li><a href="@Url.Action("", "")">Menus</a></li> *@
+ @*                    <li><a href="@Url.Action("", "")">Email Template</a></li> *@
+ @*                    <li><a href="@Url.Action("", "")">Add Email</a></li> *@
+ @*                    <li><a href="@Url.Action("", "")">Blog</a></li> *@
+ @*                    <li><a href="@Url.Action("", "")">Add Blog</a></li> *@
+ @*                    <li><a href="@Url.Action("", "")">Blog Category</a></li> *@
+ @*                </ul> *@
+ @*            </li> *@
+ @*            <li> *@
+ @*                <a class="has-arrow ai-icon" href="javascript:void(0)" aria-expanded="false"> *@
+ @*                    <i class="flaticon-381-controls-3"></i> *@
+ @*                    <span class="nav-text">Charts</span> *@
+ @*                </a> *@
+ @*                <ul aria-expanded="false"> *@
+ @*                    <li><a href="@Url.Action("", "")">Flot</a></li> *@
+ @*                    <li><a href="@Url.Action("", "")">Morris</a></li> *@
+ @*                    <li><a href="@Url.Action("", "")">Chartjs</a></li> *@
+ @*                    <li><a href="@Url.Action("", "")">Chartist</a></li> *@
+ @*                    <li><a href="@Url.Action("", "")">Sparkline</a></li> *@
+ @*                    <li><a href="@Url.Action("", "")">Peity</a></li> *@
+ @*                </ul> *@
+ @*            </li> *@
+ @*            <li> *@
+ @*                <a class="has-arrow ai-icon" href="javascript:void(0)" aria-expanded="false"> *@
+ @*                    <i class="flaticon-381-internet"></i> *@
+ @*                    <span class="nav-text">Bootstrap</span> *@
+ @*                </a> *@
+ @*                <ul aria-expanded="false"> *@
+ @*                    <li><a href="@Url.Action("", "")">Accordion</a></li> *@
+ @*                    <li><a href="@Url.Action("", "")">Alert</a></li> *@
+ @*                    <li><a href="@Url.Action("", "")">Badge</a></li> *@
+ @*                    <li><a href="@Url.Action("", "")">Button</a></li> *@
+ @*                    <li><a href="@Url.Action("", "")">Modal</a></li> *@
+ @*                    <li><a href="@Url.Action("", "")">Button Group</a></li> *@
+ @*                    <li><a href="@Url.Action("", "")">List Group</a></li> *@
+ @*                    <li><a href="@Url.Action("", "")">Media Object</a></li> *@
+ @*                    <li><a href="@Url.Action("", "")">Cards</a></li> *@
+ @*                    <li><a href="@Url.Action("", "")">Carousel</a></li> *@
+ @*                    <li><a href="@Url.Action("", "")">Dropdown</a></li> *@
+ @*                    <li><a href="@Url.Action("", "")">Popover</a></li> *@
+ @*                    <li><a href="@Url.Action("", "")">Progressbar</a></li> *@
+ @*                    <li><a href="@Url.Action("", "")">Tab</a></li> *@
+ @*                    <li><a href="@Url.Action("", "")">Typography</a></li> *@
+ @*                    <li><a href="@Url.Action("", "")">Pagination</a></li> *@
+ @*                    <li><a href="@Url.Action("", "")">Grid</a></li> *@
+ @*         *@
+ @*                </ul> *@
+ @*            </li> *@
+ @*            <li> *@
+ @*                <a class="has-arrow ai-icon" href="javascript:void(0)" aria-expanded="false"> *@
+ @*                    <i class="flaticon-381-heart"></i> *@
+ @*                    <span class="nav-text">Plugins</span> *@
+ @*                </a> *@
+ @*                <ul aria-expanded="false"> *@
+ @*                    <li><a href="@Url.Action("", "")">Select 2</a></li> *@
+ @*                    <li><a href="@Url.Action("", "")">Nestedable</a></li> *@
+ @*                    <li><a href="@Url.Action("", "")">Noui Slider</a></li> *@
+ @*                    <li><a href="@Url.Action("", "")">Sweet Alert</a></li> *@
+ @*                    <li><a href="@Url.Action("", "")">Toastr</a></li> *@
+ @*                    <li><a href="@Url.Action("", "")">Jqv Map</a></li> *@
+ @*                    <li><a href="@Url.Action("", "")">Lightgallery</a></li> *@
+ @*                </ul> *@
+ @*            </li> *@
+ @*            <li> *@
+ @*                <a href="@Url.Action("", "")" class="ai-icon" aria-expanded="false"> *@
+ @*                    <i class="flaticon-381-settings-2"></i> *@
+ @*                    <span class="nav-text">Widget</span> *@
+ @*                </a> *@
+ @*            </li> *@
+ @*            <li> *@
+ @*                <a class="has-arrow ai-icon" href="javascript:void(0)" aria-expanded="false"> *@
+ @*                    <i class="flaticon-381-notepad"></i> *@
+ @*                    <span class="nav-text">Forms</span> *@
+ @*                </a> *@
+ @*                <ul aria-expanded="false"> *@
+ @*                    <li><a href="@Url.Action("", "")">Form Elements</a></li> *@
+ @*                    <li><a href="@Url.Action("", "")">Wizard</a></li> *@
+ @*                    <li><a href="@Url.Action("", "")">Editor</a></li> *@
+ @*                    <li><a href="@Url.Action("", "")">Pickers</a></li> *@
+ @*                    <li><a href="@Url.Action("", "")">Jquery Validate</a></li> *@
+ @*                </ul> *@
+ @*            </li> *@
+ @*            <li> *@
+ @*                <a class="has-arrow ai-icon" href="javascript:void(0)" aria-expanded="false"> *@
+ @*                    <i class="flaticon-381-network"></i> *@
+ @*                    <span class="nav-text">Table</span> *@
+ @*                </a> *@
+ @*                <ul aria-expanded="false"> *@
+ @*                    <li><a href="@Url.Action("", "")">Bootstrap</a></li> *@
+ @*                    <li><a href="@Url.Action("", "")">Datatable</a></li> *@
+ @*                </ul> *@
+ @*            </li> *@
+ @*            <li> *@
+ @*                <a class="has-arrow ai-icon" href="javascript:void(0)" aria-expanded="false"> *@
+ @*                    <i class="flaticon-381-layer-1"></i> *@
+ @*                    <span class="nav-text">Pages</span> *@
+ @*                </a> *@
+ @*                <ul aria-expanded="false"> *@
+ @*                    <li><a href="@Url.Action("", "")">Register</a></li> *@
+ @*                    <li><a href="@Url.Action("", "")">Login</a></li> *@
+ @*                    <li> *@
+ @*                        <a class="has-arrow" href="javascript:void(0)" aria-expanded="false">Error</a> *@
+ @*                        <ul aria-expanded="false"> *@
+ @*                            <li><a href="@Url.Action("", "")">Error 400</a></li> *@
+ @*                            <li><a href="@Url.Action("", "")">Error 403</a></li> *@
+ @*                            <li><a href="@Url.Action("", "")">Error 404</a></li> *@
+ @*                            <li><a href="@Url.Action("", "")">Error 500</a></li> *@
+ @*                            <li><a href="@Url.Action("", "")">Error 503</a></li> *@
+ @*                        </ul> *@
+ @*                    </li> *@
+ @*                    <li><a href="@Url.Action("", "")">Lock Screen</a></li> *@
+ @*                </ul> *@
+ @*            </li> *@
         </ul>
-        <div class="add-menu-sidebar">
-            <img src="~/gymove/images/calendar.png" alt="" class="me-3">
-            <a href="@Url.Action("", "")" class="font-w500 mb-0">Create Workout Plan Now</a>
-        </div>
-        <div class="copyright">
-            <p><strong>Gymove Fitness Admin Dashboard</strong> © 2023 All Rights Reserved</p>
-            <p>Made with <span class="heart"></span> by DexignZone</p>
-        </div>
-    </div>
+     </div> 
 </div>

@@ -10,5 +10,5 @@ public class Project: BaseEntity
     public DateTime DateProjectEnd { get; set; }
     public int StatusProjectId { get; set; }
     public StatusProject StatusProject { get; set; }
-    
+    public double quoter { get; set; } 
 }

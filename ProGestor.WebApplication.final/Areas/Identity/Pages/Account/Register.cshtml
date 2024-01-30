@@ -73,7 +73,7 @@
 
                                             <div class="mb-4 position-relative">
                                                 <label class="mb-1 form-label">Contraseña</label>
-                                                <input asp-for="Input.Password" type="password" id="dz-password" class="form-control" placeholder="123456">
+                                                <input asp-for="Input.Password" type="password" id="dz-password" class="form-control" placeholder="******">
                                                 <span class="show-pass eye">
                                                     <i class="fa fa-eye-slash"></i>
                                                     <i class="fa fa-eye"></i>
@@ -83,7 +83,7 @@
                                              
                                             <div class="mb-4 position-relative">
                                                 <label class="mb-1 form-label">Confirme su contraseña</label>
-                                                <input asp-for="Input.ConfirmPassword" type="password" id="dz-password" class="form-control" placeholder="123456">
+                                                <input asp-for="Input.ConfirmPassword" type="password" id="password" class="form-control" placeholder="******">
                                                 <span class="show-pass eye">
                                                     <i class="fa fa-eye-slash"></i>
                                                     <i class="fa fa-eye"></i>
@@ -91,8 +91,8 @@
                                                 <span asp-validation-for="Input.ConfirmPassword"></span>
                                             </div>
                                              
-                                            @if (User.IsInRole(Rols.Admin))
-                                            {
+                                            @* @if (User.IsInRole(Rols.Admin)) *@
+                                            @* { *@
                                                 <div class="form-group">
                                                     <label>Seleccione el rol</label>
                                                     <select asp-for="Input.SelectedRole" class="form-control default-select" id="sel1">
@@ -101,7 +101,7 @@
                                                         <option name="rol_name" value="@Rols.Client">Cliente</option>
                                                     </select>
                                                 </div>
-                                            }
+                                            @* } *@
                                             
                                             <div class="text-center mt-4">
                                                 <button type="submit" class="btn btn-primary light  btn-block mb-3">Registrarme</button>

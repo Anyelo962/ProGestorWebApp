@@ -1,16 +1,16 @@
-@using ProGestor.WebApplication.final.Areas.Admin.Controllers
-@model ProGestor.WebApplication.final.viewModels.StatusProjectViewModel
+@model ProGestor.WebApplication.final.viewModels.ProjectTypeViewModel
 @{
     ViewData["Title"] = "Proyectos";
-    ViewData["Caption"] = "Estados del proyecto";
+    ViewData["Caption"] = "Tipos de proyectos";
 }
+
 
 <div class="content-body default-height">
 	<div class="container-fluid">
 		<div class="page-titles">
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item"><a href="javascript:void(0)">Proyectos</a></li>
-				<li class="breadcrumb-item active"><a href="javascript:void(0)">Estados del proyecto</a></li>
+				<li class="breadcrumb-item active"><a href="javascript:void(0)">Tipos de proyecto</a></li>
 			</ol>
 		</div>
 		<!-- Row -->
@@ -21,7 +21,7 @@
 						<div class="filter cm-content-box box-primary">
 							<div class="content-title">
 								<div class="cpa">
-									Agregar nuevo estado
+									Agregar nuevo tipo
 								</div>
 								<div class="tools">
 									<a href="javascript:void(0);" class="expand SlideToolHeader"><i class="fal fa-angle-down"></i></a>
@@ -29,10 +29,14 @@
 							</div>
 							<div class="cm-content-body form excerpt">
 								<div class="card-body">
-									<form asp-controller="StatusProject" asp-area="Admin" asp-action="Add">
+									<form asp-controller="ProjectType" asp-area="Admin" asp-action="Add">
 										<div class="mb-3">
-											<label class="form-label">Nombre del estado</label>
-											<input type="text" name="name" value="@(Model?.name ?? "")" class="form-control" placeholder="Ejemp: En proceso">
+											<label class="form-label">Tipo de proyecto</label>
+											<input type="text" name="name" value="@(Model?.Name ?? "")" class="form-control" placeholder="Ejemp: Construcción de casa">
+										</div>
+										<div class="mb-3">
+											<label class="form-label">Descripción</label>
+											<input type="text" name="description" value="@(Model?.Description ?? "")" class="form-control" placeholder="Breve descripción del tipo de proyecto.">
 										</div>
 										<button type="submit" class="btn btn-primary">Guardar</button>
 									</form>
@@ -44,7 +48,7 @@
 						<div class="filter cm-content-box box-primary">
 							<div class="content-title">
 								<div class="cpa">
-									Lista de estados
+									Lista de tipos
 								</div>
 								<div class="tools">
 									<a href="javascript:void(0);" class="expand SlideToolHeader"><i class="fal fa-angle-down"></i></a>
@@ -58,23 +62,25 @@
 											<tr>
 												<th scope="col" class="text-black">S.No</th>
 												<th scope="col" class="text-black">Nombre</th>
+												<th scope="col" class="text-black">Descripción</th>
 												<th scope="col" class="text-black text-end">Acción</th>
 											</tr>
 											</thead>
 											<tbody>
 												
-											@foreach (var item in Model.StatusProjects)
+											@foreach (var item in Model.ProjectTypes)
 											{
 												<tr>
 													
 													<td>@item.Id</td>
 													<td>@item.name</td>
+													<td>@item.description</td>
 
 													<td class="text-end">
 														@* <a href="javascript:void(0);">Editar</a> *@
-														<button type="button" class="btn btn-primary mb-2 btn_update_status" data-url="@Url.Action("UpdateStatus", "StatusProject", new { area = "Admin" })"  data-id="@item.Id" >Editar</button>
+														<button type="button" class="btn btn-primary mb-2 btn_update_project_type" data-url="@Url.Action("UpdateType", "ProjectType", new { area = "Admin" })"  data-id="@item.Id" >Editar</button>
 														<span>|</span>
-														<button type="button" class="btn btn-primary mb-2 remove_status" data-url="@Url.Action("Remove", "StatusProject", new { area = "Admin" })" data-id="@item.Id" >Eliminar</button>
+														<button type="button" class="btn btn-primary mb-2 remove_project_type" data-url="@Url.Action("Remove", "ProjectType", new { area = "Admin" })" data-id="@item.Id" >Eliminar</button>
 													</td>
 												</tr>
 											}
@@ -93,7 +99,7 @@
 
 
 
-<div class="modal fade" id="basicModal">
+<div class="modal fade" id="project_type_modal_update">
     <div class="modal-dialog">
         <div class="modal-content">
             <!-- Contenido del modal (se cargará la vista parcial aquí) -->
@@ -101,6 +107,11 @@
     </div>
 </div>
 
+
+
+<!--**********************************
+Content body end
+***********************************-->
 @section gymove_style
 	{
 	<!-- Start Page Level CSS -->
@@ -111,8 +122,12 @@
 
 @section gymove_script
 	{
+		<!--**********************************
+		Scripts
+		***********************************-->
 		<script src="~/gymove/vendor/global/global.min.js"></script>
 		<script src="~/gymove/vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
+		<!-- Dashboard 1 -->
 		<script src="~/gymove/js/dashboard/cms.js"></script>
 		<script src="~/gymove/js/custom.min.js"></script>
 		<script src="~/gymove/js/deznav-init.js"></script>

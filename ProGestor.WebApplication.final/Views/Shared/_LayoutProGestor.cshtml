@@ -10,6 +10,7 @@
     <link href="~/gymove/vendor/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet">
     <link href="gymove/"/>
     <link href="~/gymove/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.4/dist/sweetalert2.min.css" integrity="sha256-h2Gkn+H33lnKlQTNntQyLXMWq7/9XI2rlPCsLsVcUBs=" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 </head>
 <body class="h-100">
@@ -31,9 +32,11 @@ Main wrapper end
 @* <partial name="gymove/_Modal" /> *@
 @* <partial name="gymove/_DietMenu" /> *@
 @* <partial name="gymove/_FilterModel" /> *@
-@* <script src="~/lib/jquery/dist/jquery.min.js"></script> *@
-@* <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script> *@
-@* <script src="~/js/StatusProject.js" asp-append-version="true"></script> *@
-@await RenderSectionAsync("gymove_script", false)
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+ @* <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script> *@
+ <script src="~/js/StatusProject.js" asp-append-version="true"></script>
+ <script src="~/js/ProjectType.js" asp-append-version="true"></script>
+ <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+ @await RenderSectionAsync("gymove_script", false)
 </body>
 </html>

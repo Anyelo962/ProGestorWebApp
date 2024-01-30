@@ -1,25 +1,26 @@
-$(document).ready(function () {
-    $(".btn_update_status").on("click", function () {
+
+$(document).ready(function(){
+    $(".btn_update_project_type").on("click", function(){
         var url = $(this).data("url");
         var id = $(this).data("id");
-
+        
         $.ajax({
-            url: url,
-            data: {id: id},
+            url:url,
+            data: {id:id},
             type: "GET",
-            success: function (result) {
-                $("#basicModal .modal-content").html(result)
+            success: function(result){
+                $("#project_type_modal_update .modal-content").html(result)
 
-                $("#basicModal").modal("show");
+                $("#project_type_modal_update").modal("show");
             },
-            error: function (error) {
-                console.log("Error al intentar cargar la vista parcial: " + error);
+            error: function(){
+                
             }
-        })
-    })
-    
-    
-    $(".remove_status").on("click", function(){
+        });
+        
+    });
+
+    $(".remove_project_type").on("click", function(){
         Swal.fire({
             title: "¿Esta seguro?",
             text: "¡No podrás revertir esto!",
@@ -32,7 +33,7 @@ $(document).ready(function () {
             if (result.isConfirmed) {
                 var url = $(this).data("url");
                 var id = $(this).data("id");
-                
+
                 $.ajax({
                     url: url,
                     data: {id : id},
@@ -41,7 +42,7 @@ $(document).ready(function () {
                         if(data.id == 1){
                             Swal.fire({
                                 title: "Eliminado!",
-                                text: "El registro ha sido eliminado!",
+                                text: data.message,
                                 icon: "success"
                             }).then(function(){
                                 window.location.reload();
@@ -50,18 +51,14 @@ $(document).ready(function () {
                         else if(data.id == 2){
                             Swal.fire({
                                 title: "No eliminado!",
-                                text: "El registro no pudo ser eliminado!",
+                                text:data.message,
                                 icon: "error"
                             }).then(function(){
                                 window.location.reload();
                             });
                         }
                     },
-                    error: function(){
-                        
-                    }
-
-
+                    error: function(){}
                 })
             }else{
                 Swal.fire({
@@ -71,13 +68,12 @@ $(document).ready(function () {
                 })
             }
         });
-        
-        
-        
-        
-    })
-    
-    
-
-
+    });
 })
+
+
+
+
+
+
+

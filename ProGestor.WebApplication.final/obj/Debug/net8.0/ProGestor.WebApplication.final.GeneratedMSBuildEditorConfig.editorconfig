@@ -30,12 +30,28 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW4vVmlld3MvR2VuZGVyL0luZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/anyelovinzen/RiderProjects/ProGestor.WebApplication.final/ProGestor.WebApplication.final/Areas/Admin/Views/Project/AddProject.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW4vVmlld3MvUHJvamVjdC9BZGRQcm9qZWN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/anyelovinzen/RiderProjects/ProGestor.WebApplication.final/ProGestor.WebApplication.final/Areas/Admin/Views/Project/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW4vVmlld3MvUHJvamVjdC9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/anyelovinzen/RiderProjects/ProGestor.WebApplication.final/ProGestor.WebApplication.final/Areas/Admin/Views/ProjectType/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW4vVmlld3MvUHJvamVjdFR5cGUvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/anyelovinzen/RiderProjects/ProGestor.WebApplication.final/ProGestor.WebApplication.final/Areas/Admin/Views/ProjectType/_UpdateType.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW4vVmlld3MvUHJvamVjdFR5cGUvX1VwZGF0ZVR5cGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/anyelovinzen/RiderProjects/ProGestor.WebApplication.final/ProGestor.WebApplication.final/Areas/Admin/Views/StatusProject/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW4vVmlld3MvU3RhdHVzUHJvamVjdC9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/anyelovinzen/RiderProjects/ProGestor.WebApplication.final/ProGestor.WebApplication.final/Areas/Admin/Views/StatusProject/_UpdateStatus.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW4vVmlld3MvU3RhdHVzUHJvamVjdC9fVXBkYXRlU3RhdHVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/anyelovinzen/RiderProjects/ProGestor.WebApplication.final/ProGestor.WebApplication.final/Areas/Admin/Views/_ViewImports.cshtml]

@@ -6,6 +6,8 @@
   // single select box
   $("#single-select").select2();
 
+    $("#single-select-project-type").select2();
+
   // multi select box
   $('.multi-select').select2();
 
@@ -180,7 +182,7 @@
 
   // single-select-placeholder
   $(".single-select-placeholder").select2({
-      placeholder: "Select a state",
+      placeholder: "Seleccione el estado",
       allowClear: true
   });
 

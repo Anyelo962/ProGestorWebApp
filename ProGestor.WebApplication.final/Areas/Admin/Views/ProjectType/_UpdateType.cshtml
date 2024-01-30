@@ -1,0 +1,29 @@
+@model ProGestor.WebApplication.final.viewModels.ProjectTypeViewModel
+@{
+    ViewData["Title"] = "Proyectos";
+    ViewData["Caption"] = "Tipos de proyectos";
+}
+
+
+<div class="bootstrap-modal">
+    <!-- Button trigger modal -->
+    <!-- Modal -->
+    <div class="modal-header">
+        <h5 class="modal-title">Modificar tipo</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal">
+        </button>
+    </div>
+    <form asp-action="UpdateType" asp-area="Admin" asp-controller="ProjectType" method="post">
+        <div class="modal-body">
+            <label class="mb-1"> Nombre del tipo</label>
+            <input type="text" name="name" value="@(Model?.Name ?? "")" class="form-control">
+            <label class="mt-2"> Descripción</label>
+            <input type="text" name="description" value="@(Model?.Description ?? "")" class="form-control">
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-danger light" data-bs-dismiss="modal">Cerrar</button>
+
+            <button type="submit" class="btn btn-primary btn_save_type">Guardar cambios</button>
+        </div>
+    </form>
+</div>

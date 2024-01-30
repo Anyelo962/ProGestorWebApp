@@ -239,6 +239,9 @@ namespace ProGestor.Infraestruture.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<double>("quoter")
+                        .HasColumnType("float");
+
                     b.HasKey("Id");
 
                     b.HasIndex("ProjectTypeId");

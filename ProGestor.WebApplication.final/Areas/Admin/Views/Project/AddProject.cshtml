@@ -1,0 +1,189 @@
+@model ProGestor.WebApplication.final.viewModels.ProjectViewModel
+
+@{
+    ViewData["Title"] = "Proyectos";
+    ViewData["Caption"] = "Crear proyecto";
+}
+<!--**********************************
+	Content body start
+***********************************-->
+<div class="content-body default-height">
+    <div class="container-fluid">
+        <div class="page-titles">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Proyecto</a></li>
+                <li class="breadcrumb-item active"><a href="javascript:void(0)">Crear proyecto</a></li>
+            </ol>
+        </div>
+        <div class="row">
+            <div class="col-xl-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="mb-4">
+                            <h4 class="card-title">Seleccione cliente</h4>
+                        </div>
+                        <select id="single-select" style="width:100%;">
+                            <option value="">Seleccione cliente</option>
+                            @foreach (var item in Model.Users)
+                            {
+                                <option value="@item.Id">@item.firstName</option>
+                            }
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-xl-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="mb-4">
+                            <h4 class="card-title">Tipo de proyecto</h4>
+                        </div>
+            
+                        <select id="dropdown-placement" style="width:100%;">
+                            <option value="AL">Seleccione el tipo de proyecto</option>
+                            @foreach (var item in Model.ProjectTypes)
+                            {
+                                <option value="@item.Id">@item.name</option>
+                            }
+                        </select>
+                        <div id="select2-modal">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="mb-4">
+                            <h4 class="card-title">Seleccione el estado</h4>
+                        </div>
+         
+                        <select class="single-select-placeholder js-states" style="width:100%;">
+         
+                            <option value="">Seleccione el estado</option>
+                            @foreach (var item in Model.StatusProjects)
+                            {
+                                <option value="@item.Id">@item.name</option>
+                            }
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6">
+                <!-- Card -->
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Fecha de inicio</h4>
+                    </div>
+                    <div class="card-body">
+                        <input name="datepicker" class="datepicker-default form-control" id="datepicker">
+                    </div>
+                </div>
+                <!-- Card -->
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-xl-6">
+                <!-- Card -->
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Fecha de cierre</h4>
+                    </div>
+                    <div class="card-body">
+                        <input name="datepicker" class="datepicker-default form-control" id="datepicker">
+                    </div>
+                </div>
+                <!-- Card -->
+            </div>
+            
+            <div class="col-xl-6 col-lg-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Ingrese presupuesto</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="basic-form">
+                            <form>
+                                <div class="form-group">
+                                    <input type="text" class="form-control input-default " placeholder="$15350.50">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!--**********************************
+Content body end
+***********************************-->
+@section gymove_style
+{
+    <!-- Start Page Level CSS -->
+    <link rel="stylesheet" href="~/gymove/vendor/select2/css/select2.min.css">
+    	<!-- Daterange picker -->
+    	<link href="~/gymove/vendor/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+    	<!-- Clockpicker -->
+    	<link href="~/gymove/vendor/clockpicker/css/bootstrap-clockpicker.min.css" rel="stylesheet">
+    	<!-- asColorpicker -->
+    	<link href="~/gymove/vendor/jquery-asColorPicker/css/asColorPicker.min.css" rel="stylesheet">
+    	<!-- Material color picker -->
+    	<link href="~/gymove/vendor/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet">
+    	<!-- Pick date -->
+    	<link rel="stylesheet" href="~/gymove/vendor/pickadate/themes/default.css">
+    	<link rel="stylesheet" href="~/gymove/vendor/pickadate/themes/default.date.css">
+    	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- End Page Level CSS -->
+}
+
+@section gymove_script
+{
+    <!--**********************************
+    Scripts
+    ***********************************-->
+    <!-- Required vendors -->
+    <script src="~/gymove/vendor/global/global.min.js"></script>
+    <script src="~/gymove/vendor/select2/js/select2.full.min.js"></script>
+    <script src="~/gymove/vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
+    <script src="~/gymove/js/plugins-init/select2-init.js"></script>
+    <script src="~/gymove/js/custom.min.js"></script>
+    <script src="~/gymove/js/deznav-init.js"></script>
+
+    <!-- Daterangepicker -->
+    <!-- momment js is must -->
+    <script src="~/gymove/vendor/moment/moment.min.js"></script>
+    <script src="~/gymove/vendor/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <!-- clockpicker -->
+    <script src="~/gymove/vendor/clockpicker/js/bootstrap-clockpicker.min.js"></script>
+    <!-- asColorPicker -->
+    <script src="~/gymove/vendor/jquery-asColor/jquery-asColor.min.js"></script>
+    <script src="~/gymove/vendor/jquery-asGradient/jquery-asGradient.min.js"></script>
+    <script src="~/gymove/vendor/jquery-asColorPicker/js/jquery-asColorPicker.min.js"></script>
+    <!-- Material color picker -->
+    <script src="~/gymove/vendor/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+    <!-- pickdate -->
+    <script src="~/gymove/vendor/pickadate/picker.js"></script>
+    <script src="~/gymove/vendor/pickadate/picker.time.js"></script>
+    <script src="~/gymove/vendor/pickadate/picker.date.js"></script>
+
+    <!-- Daterangepicker -->
+    <script src="~/gymove/js/plugins-init/bs-daterange-picker-init.js"></script>
+    <!-- Clockpicker init -->
+    <script src="~/gymove/js/plugins-init/clock-picker-init.js"></script>
+    <!-- asColorPicker init -->
+    <script src="~/gymove/js/plugins-init/jquery-asColorPicker.init.js"></script>
+    <!-- Material color picker init -->
+    <script src="~/gymove/js/plugins-init/material-date-picker-init.js"></script>
+    <!-- Pickdate -->
+    <script src="~/gymove/js/plugins-init/pickadate-init.js"></script>
+    
+}
