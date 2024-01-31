@@ -1,3 +1,4 @@
+@model List<ProGestor.Common.Dtos.ProjectDTO>
 @{
 	ViewData["Title"] = "Proyectos";
 	ViewData["Caption"] = "Listado de proyectos";
@@ -39,40 +40,44 @@
     									<th class="text-end">Acción</th>
     								</tr>
     							</thead>
-    							<tbody>
-    								<tr>
-    									<td>
-    										<div class="form-check custom-checkbox ms-2">
-    											<input type="checkbox" class="form-check-input" id="customCheckBox3" required="">
-    											<label class="form-check-label" for="customCheckBox3"></label>
-    										</div>
-    									</td>
-    									<td>#P-00002</td>
-    									<td>28/02/2021, 12:42 AM</td>
-    									<td>Garrett Winters</td>
-    									<td>Dr. Cedric</td>
-    									<td>Sleep Problem</td>
-    									<td>
-    										<span class="badge light badge-warning">
-    											<i class="fa fa-circle text-warning me-1"></i>
-    											In Treatment
-    										</span>
-    									</td>
-    									<td>AB-002</td>
-    									<td>
-    										<div class="dropdown ms-auto text-end c-pointer">
-    											<div class="btn-link" data-bs-toggle="dropdown">
-    												<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><circle fill="#000000" cx="5" cy="12" r="2"></circle><circle fill="#000000" cx="12" cy="12" r="2"></circle><circle fill="#000000" cx="19" cy="12" r="2"></circle></g></svg>
-    											</div>
-    											<div class="dropdown-menu dropdown-menu-end">
-    												<a class="dropdown-item" href="#">Accept Patient</a>
-    												<a class="dropdown-item" href="#">Reject Order</a>
-    												<a class="dropdown-item" href="#">View Details</a>
-    											</div>
-    										</div>
-    									</td>
-    								</tr>
-    							</tbody>
+							    <tbody>
+							    
+							    @foreach (var item in Model.ToList())
+							    {
+								    <tr>
+									    <td>
+										    <div class="form-check custom-checkbox ms-2">
+											    <input type="checkbox" class="form-check-input" id="customCheckBox3" required="">
+											    <label class="form-check-label" for="customCheckBox3"></label>
+										    </div>
+									    </td>
+									    <td>@item.Id</td>
+									    <td>@item.ProjectTypeName</td>
+									    <td>@item.FirstName @item.LastName</td>
+									    <td>@item.DateProjectStart</td>
+									    <td>@item.DateProjectEnd</td>
+									    <td>
+										    <span class="badge light badge-warning">
+											    <i class="fa fa-circle text-warning me-1"></i>
+											    @item.StatusProjectName
+										    </span>
+									    </td>
+									    <td>@item.Quoter</td>
+									    <td>
+										    <div class="dropdown ms-auto text-end c-pointer">
+											    <div class="btn-link" data-bs-toggle="dropdown">
+												    <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><circle fill="#000000" cx="5" cy="12" r="2"></circle><circle fill="#000000" cx="12" cy="12" r="2"></circle><circle fill="#000000" cx="19" cy="12" r="2"></circle></g></svg>
+											    </div>
+											    <div class="dropdown-menu dropdown-menu-end">
+												    <a class="dropdown-item" href="#">Cambiar estado</a>
+												    <a class="dropdown-item" >Descontinuar</a>
+												    <a class="dropdown-item remove_project" href="#">Eliminar</a>
+											    </div>
+										    </div>
+									    </td>
+								    </tr>
+							    }
+							    </tbody>
     						</table>
     					</div>
     				</div>

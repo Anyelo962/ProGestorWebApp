@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 using ProGestor.Common.Entities;
 using ProGestor.Common.Interfaces;
 using ProGestor.WebApplication.final.viewModels;
-using Project = Microsoft.Build.Evaluation.Project;
 
 namespace ProGestor.WebApplication.final.Areas.Admin.Controllers;
 
@@ -29,8 +28,8 @@ public class ProjectController : Controller
     [HttpGet]
     public async Task<IActionResult> Index()
     {
-        
-        return View();
+        var result = await _projectRepository.GetAllProject();
+        return View(result);
     }
 
 
@@ -50,9 +49,17 @@ public class ProjectController : Controller
     [HttpPost]
     public async Task<IActionResult> AddProject(Project project)
     {
-        
 
-        return RedirectToAction("Index");
+        var addProject = await _projectRepository.Add(project);
+
+        if (addProject)
+        {
+            return RedirectToAction("Index");
+        }
+
+
+        return BadRequest();
+
     }
 
 

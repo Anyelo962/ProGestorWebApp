@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ProGestor.Common")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8b8fff648c0d48b296f33ec5c9460363e37f537e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5474f0f36f38fa05fa8a9270d6cdc66007307991")]
 [assembly: System.Reflection.AssemblyProductAttribute("ProGestor.Common")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ProGestor.Common")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
