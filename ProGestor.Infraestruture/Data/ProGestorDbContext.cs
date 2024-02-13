@@ -12,6 +12,12 @@ public class ProGestorDbContext: IdentityDbContext<User>
         
     }
 
+
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        base.OnConfiguring(optionsBuilder);
+    }
+
     public DbSet<Address> Addresses { get; set; }
     public DbSet<City> Cities { get; set; }
     public DbSet<Gender> Genders { get; set; }

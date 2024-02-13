@@ -155,6 +155,37 @@ namespace ProGestor.Infraestruture.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("ProGestor.Common.Entities.ActivitySchedule", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("EndDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<double>("EstimatedCost")
+                        .HasColumnType("float");
+
+                    b.Property<int>("ProjectId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("StartDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProjectId");
+
+                    b.ToTable("ActivitySchedule");
+                });
+
             modelBuilder.Entity("ProGestor.Common.Entities.Address", b =>
                 {
                     b.Property<int>("Id")
@@ -198,6 +229,32 @@ namespace ProGestor.Infraestruture.Migrations
                     b.ToTable("Cities");
                 });
 
+            modelBuilder.Entity("ProGestor.Common.Entities.CivilEngineeringDesigns", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("DesignName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<byte[]>("Document")
+                        .IsRequired()
+                        .HasColumnType("varbinary(max)");
+
+                    b.Property<int>("ProjectId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProjectId");
+
+                    b.ToTable("CivilEngineeringDesigns");
+                });
+
             modelBuilder.Entity("ProGestor.Common.Entities.Gender", b =>
                 {
                     b.Property<int>("Id")
@@ -213,6 +270,63 @@ namespace ProGestor.Infraestruture.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Genders");
+                });
+
+            modelBuilder.Entity("ProGestor.Common.Entities.Invoice", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("LaborUsed")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MaterialUsed")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OtherExpenses")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ProjectId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProjectId");
+
+                    b.ToTable("Invoice");
+                });
+
+            modelBuilder.Entity("ProGestor.Common.Entities.PaymentAdvance", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<double>("AmountPaid")
+                        .HasColumnType("float");
+
+                    b.Property<DateTime>("PaymentDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("ProjectId")
+                        .HasColumnType("int");
+
+                    b.Property<double>("RemainingBalance")
+                        .HasColumnType("float");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProjectId");
+
+                    b.ToTable("PaymentAdvance");
                 });
 
             modelBuilder.Entity("ProGestor.Common.Entities.Project", b =>
@@ -251,6 +365,32 @@ namespace ProGestor.Infraestruture.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Projects");
+                });
+
+            modelBuilder.Entity("ProGestor.Common.Entities.ProjectTracking", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ActivityPerformed")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ProjectId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ProjectStatus")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProjectId");
+
+                    b.ToTable("ProjectTracking");
                 });
 
             modelBuilder.Entity("ProGestor.Common.Entities.ProjectType", b =>
@@ -429,6 +569,17 @@ namespace ProGestor.Infraestruture.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("ProGestor.Common.Entities.ActivitySchedule", b =>
+                {
+                    b.HasOne("ProGestor.Common.Entities.Project", "Project")
+                        .WithMany("ActivitySchedules")
+                        .HasForeignKey("ProjectId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Project");
+                });
+
             modelBuilder.Entity("ProGestor.Common.Entities.Address", b =>
                 {
                     b.HasOne("ProGestor.Common.Entities.City", "City")
@@ -438,6 +589,39 @@ namespace ProGestor.Infraestruture.Migrations
                         .IsRequired();
 
                     b.Navigation("City");
+                });
+
+            modelBuilder.Entity("ProGestor.Common.Entities.CivilEngineeringDesigns", b =>
+                {
+                    b.HasOne("ProGestor.Common.Entities.Project", "Project")
+                        .WithMany("CivilEngineeringDesignsCollection")
+                        .HasForeignKey("ProjectId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Project");
+                });
+
+            modelBuilder.Entity("ProGestor.Common.Entities.Invoice", b =>
+                {
+                    b.HasOne("ProGestor.Common.Entities.Project", "Project")
+                        .WithMany("Invoices")
+                        .HasForeignKey("ProjectId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Project");
+                });
+
+            modelBuilder.Entity("ProGestor.Common.Entities.PaymentAdvance", b =>
+                {
+                    b.HasOne("ProGestor.Common.Entities.Project", "Project")
+                        .WithMany("PaymentAdvances")
+                        .HasForeignKey("ProjectId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Project");
                 });
 
             modelBuilder.Entity("ProGestor.Common.Entities.Project", b =>
@@ -465,6 +649,17 @@ namespace ProGestor.Infraestruture.Migrations
                     b.Navigation("StatusProject");
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("ProGestor.Common.Entities.ProjectTracking", b =>
+                {
+                    b.HasOne("ProGestor.Common.Entities.Project", "Project")
+                        .WithMany("ProjectTrackings")
+                        .HasForeignKey("ProjectId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Project");
                 });
 
             modelBuilder.Entity("ProGestor.Common.Entities.User", b =>
@@ -496,6 +691,19 @@ namespace ProGestor.Infraestruture.Migrations
             modelBuilder.Entity("ProGestor.Common.Entities.Gender", b =>
                 {
                     b.Navigation("Users");
+                });
+
+            modelBuilder.Entity("ProGestor.Common.Entities.Project", b =>
+                {
+                    b.Navigation("ActivitySchedules");
+
+                    b.Navigation("CivilEngineeringDesignsCollection");
+
+                    b.Navigation("Invoices");
+
+                    b.Navigation("PaymentAdvances");
+
+                    b.Navigation("ProjectTrackings");
                 });
 
             modelBuilder.Entity("ProGestor.Common.Entities.ProjectType", b =>
