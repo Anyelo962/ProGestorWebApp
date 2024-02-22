@@ -4,7 +4,11 @@ public class Invoice:BaseEntity
 {
     public int ProjectId { get; set; }
     public Project Project { get; set; }
-    public string MaterialUsed { get; set; }
-    public string LaborUsed { get; set; }
-    public string OtherExpenses { get; set; }
+    public string DescriptionProject { get; set; }
+    public string Amount { get; set; }
+    public string PaymentType { get; set; }
+    
+    public DateTime CreationDate { get; set; }
+    public DateTime ModificationDate { get; set; }
+    public string ModifiedBy { get; set; }
 }

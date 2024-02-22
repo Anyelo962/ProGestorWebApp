@@ -6,7 +6,9 @@ namespace ProGestor.Infraestruture.Repository;
 
 public class InvoiceRepository: BaseRepository<Invoice>, IInvoiceRepository
 {
+    private readonly ProGestorDbContext _context;
     public InvoiceRepository(ProGestorDbContext context) : base(context)
     {
+        this._context = context;
     }
 }

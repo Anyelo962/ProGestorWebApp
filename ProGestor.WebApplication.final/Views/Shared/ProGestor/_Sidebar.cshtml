@@ -19,44 +19,51 @@
          <span class="nav-text">Facturación</span>
      </a>
      <ul aria-expanded="false">
-         <li><a href="@Url.Action("", "")">Profile</a></li>
-         <li><a href="@Url.Action("", "")">Post Details</a></li>
+         <li><a asp-area="Admin" asp-controller="Billing" asp-action="Index">Facturas</a></li>
+         <li><a asp-area="Admin" asp-controller="Billing" asp-action="AddBilling">Crear factura</a></li>
          <li>
-             <a class="has-arrow" href="javascript:void(0)" aria-expanded="false">Email</a>
+             <a class="has-arrow" href="javascript:void(0)" aria-expanded="false">Otras opciones</a>
              <ul aria-expanded="false">
-                 <li><a href="@Url.Action("", "")">Compose</a></li>
-                 <li><a href="@Url.Action("", "")">Inbox</a></li>
-                 <li><a href="@Url.Action("", "")">Read</a></li>
+                 <li><a href="@Url.Action("", "")">Métodos de pago</a></li>
+                 <li><a href="@Url.Action("", "")">Reclamaciones</a></li>
+                 <li><a href="@Url.Action("", "")">Ajustes de cuentas</a></li>
              </ul>
          </li>
          </ul>
- @*                    <li><a href="@Url.Action("", "")">Calendar</a></li> *@
- @*                    <li> *@
- @*                        <a class="has-arrow" href="javascript:void(0)" aria-expanded="false">Shop</a> *@
- @*                        <ul aria-expanded="false"> *@
- @*                            <li><a href="@Url.Action("", "")">Product Grid</a></li> *@
- @*                            <li><a href="@Url.Action("", "")">Product List</a></li> *@
- @*                            <li><a href="@Url.Action("", "")">Product Details</a></li> *@
- @*                            <li><a href="@Url.Action("", "")">Order</a></li> *@
- @*                            <li><a href="@Url.Action("", "")">Checkout</a></li> *@
- @*                            <li><a href="@Url.Action("", "")">Invoice</a></li> *@
- @*                            <li><a href="@Url.Action("", "")">Customers</a></li> *@
- @*                        </ul> *@
- @*                    </li> *@
- @*                </ul> *@
- @*            </li> *@
- @*            <li> *@
- @*                <a class="has-arrow ai-icon" href="javascript:void(0)" aria-expanded="false"> *@
- @*                    <i class="flaticon-381-compact-disc-1"></i> *@
- @*                    <span class="nav-text">Icons<span class="badge badge-danger badge-xs ms-1">NEW</span></span> *@
- @*                </a> *@
- @*                <ul aria-expanded="false"> *@
- @*                    <li><a href="@Url.Action("", "")">Flaticons</a></li> *@
- @*                    <li><a href="@Url.Action("", "")">SVG Icons</a></li> *@
- @*                    <li><a href="@Url.Action("", "")">Feather Icons</a></li> *@
- @*                </ul> *@
- @*            </li> *@
- @*            <li> *@
+            <li>
+            
+                <a class="has-arrow" href="javascript:void(0)" aria-expanded="false">     <i class="flaticon-381-compact-disc-1"></i>Programar actividad</a>
+                <ul aria-expanded="false">
+                    <li><a href="@Url.Action("", "")">Crear actividad</a></li>
+                    <li><a href="@Url.Action("", "")">Listado de actividades</a></li>
+                </ul>
+            </li>
+                    <li>
+                        <a class="has-arrow ai-icon" href="javascript:void(0)" aria-expanded="false">
+                            <i class="flaticon-381-compact-disc-1"></i>
+                            <span class="nav-text">Diseños<span class="badge badge-danger badge-xs ms-1">Diseños</span></span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="@Url.Action("", "")">Crear diseño</a></li>
+                        </ul>
+                    </li>
+                    
+            <li>
+                <a class="has-arrow ai-icon" href="javascript:void(0)" aria-expanded="false">
+                    <i class="flaticon-381-compact-disc-1"></i>
+                    <span class="nav-text">Reportes<span class="badge badge-danger badge-xs ms-1">Reportes</span></span>
+                </a>
+                <ul aria-expanded="false">
+                    <li><a href="@Url.Action("", "")">Listado de facturas</a></li>
+                    <li><a href="@Url.Action("", "")">Listado de clientes</a></li>
+                    <li><a href="@Url.Action("", "")">Ganancias</a></li>
+                    <li><a href="@Url.Action("", "")">Proyectos por trimestres</a></li>
+                </ul>
+            </li>
+ </ul>
+
+        
+        @*            <li> *@
  @*                <a class="has-arrow ai-icon" href="javascript:void(0)" aria-expanded="false"> *@
  @*                    <i class="flaticon-381-briefcase"></i> *@
  @*                    <span class="nav-text">CMS<span class="badge badge-danger badge-xs ms-1">NEW</span></span> *@
@@ -177,6 +184,6 @@
  @*                    <li><a href="@Url.Action("", "")">Lock Screen</a></li> *@
  @*                </ul> *@
  @*            </li> *@
-        </ul>
+        @* </ul>  *@
      </div> 
 </div>
