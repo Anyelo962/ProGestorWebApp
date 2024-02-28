@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ProGestor.WebApplication.final")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8ae451e8297098234647df3050f5deade138174b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4c4ff1ad3ccfe8a544f27dd311def6895ef68540")]
 [assembly: System.Reflection.AssemblyProductAttribute("ProGestor.WebApplication.final")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ProGestor.WebApplication.final")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

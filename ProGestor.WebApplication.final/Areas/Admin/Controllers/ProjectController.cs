@@ -1,3 +1,4 @@
+using System.Security.Claims;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using ProGestor.Common.Entities;
@@ -36,11 +37,14 @@ public class ProjectController : Controller
     [HttpGet]
     public async Task<IActionResult> AddProject()
     {
+        var claimsIdentity = (ClaimsIdentity)User.Identity!;
+        var actualUser = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier);
+        
         var getProjectList = new ProjectViewModel()
         {
             ProjectTypes = _projectTypeRepository.GetAll().Result.ToList(),
             StatusProjects = _statusProjectRepository.GetAll().Result.ToList(),
-            Users = _userManager.Users.ToList()
+            Users = _userManager.Users.Where(x => x.Id != actualUser!.Value).ToList()
         };
 
         return View(getProjectList);
@@ -50,14 +54,19 @@ public class ProjectController : Controller
     public async Task<IActionResult> AddProject(Project project)
     {
 
-        var addProject = await _projectRepository.Add(project);
-
-        if (addProject)
+        if (project.UserId != null)
         {
-            return RedirectToAction("Index");
+            var addProject = await _projectRepository.Add(project);
+            if (addProject)
+            {
+                return RedirectToAction("Index");
+            }
         }
-
-
+        else
+        {
+            return RedirectToAction("AddProject");
+        }
+        
         return BadRequest();
 
     }

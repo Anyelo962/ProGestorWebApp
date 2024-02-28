@@ -60,7 +60,18 @@
                     <li><a href="@Url.Action("", "")">Proyectos por trimestres</a></li>
                 </ul>
             </li>
- </ul>
+            
+            <li>
+                <a class="has-arrow ai-icon" href="javascript:void(0)" aria-expanded="false">
+                    <i class="flaticon-381-compact-disc-1"></i>
+                    <span class="nav-text">Administración</span>
+                </a>
+                <ul aria-expanded="false">
+                    <li><a asp-area="Admin" asp-controller="User" asp-action="Index">Listado de empleados</a></li>
+                    <li><a asp-area="Identity" asp-page="/Account/Register"> Crear empleados</a></li>
+                </ul>
+            </li>
+        </ul>
 
         
         @*            <li> *@

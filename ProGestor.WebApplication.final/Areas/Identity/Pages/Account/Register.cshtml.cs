@@ -95,9 +95,7 @@ namespace ProGestor.WebApplication.final.Areas.Identity.Pages.Account
             [Display(Name = "Numero de teléfono")]
             public string NumberPhone { get; set; }
             public string SelectedRole { get; set; }
-            
         }
-
 
         public async Task OnGetAsync(string returnUrl = null)
         {
@@ -127,7 +125,6 @@ namespace ProGestor.WebApplication.final.Areas.Identity.Pages.Account
 
                 if (result.Succeeded)
                 {
-                    
                     //Validar si existen, sino se crean
                     if (!await _roleManager.RoleExistsAsync(Rols.Admin))
                     {
@@ -155,8 +152,16 @@ namespace ProGestor.WebApplication.final.Areas.Identity.Pages.Account
                     _logger.LogInformation("El usuario creó una nueva cuenta con contraseña.");
                     
                     var userId = await _userManager.GetUserIdAsync(user);
-                    await _signInManager.SignInAsync(user, isPersistent: false);
-                    return RedirectToAction("MainPage", "Home", new { area = "Client"});
+                    if (User.IsInRole(Rols.Admin))
+                    {
+                       return RedirectToAction("Index", "User", new { area = "Admin"});
+                    }
+                    else
+                    {
+                        await _signInManager.SignInAsync(user, isPersistent: false);
+                        return RedirectToAction("MainPage", "Home", new { area = "Client"});
+                    }
+
                     // var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                     // code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
                     // var callbackUrl = Url.Page(
