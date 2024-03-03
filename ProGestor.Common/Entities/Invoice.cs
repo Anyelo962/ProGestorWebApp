@@ -7,8 +7,10 @@ public class Invoice:BaseEntity
     public string DescriptionProject { get; set; }
     public string Amount { get; set; }
     public string PaymentType { get; set; }
-    
+    public bool Status { get; set; }
+
     public DateTime CreationDate { get; set; }
     public DateTime ModificationDate { get; set; }
     public string ModifiedBy { get; set; }
+    
 }

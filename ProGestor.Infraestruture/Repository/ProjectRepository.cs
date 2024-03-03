@@ -28,8 +28,9 @@ public class ProjectRepository: BaseRepository<Project>, IProjectRepository
                 DateProjectStart = x.DateProjectStart,
                DateProjectEnd = x.DateProjectEnd,
                 StatusProjectName = x.StatusProject.name,
-               Quoter = x.quoter
-            }).ToListAsync();
+               Quoter = x.quoter,
+               Status = x.Status
+            }).Where(x => x.Status == true).ToListAsync();
 
         return result;
 

@@ -3261,6 +3261,10 @@
       "PackagePath": "staticwebassets/gymove/vendor/wnumb/wNumb.js"
     },
     {
+      "Id": "/Users/anyelovinzen/RiderProjects/ProGestor.WebApplication.final/ProGestor.WebApplication.final/wwwroot/js/Project.js",
+      "PackagePath": "staticwebassets/js/Project.js"
+    },
+    {
       "Id": "/Users/anyelovinzen/RiderProjects/ProGestor.WebApplication.final/ProGestor.WebApplication.final/wwwroot/js/ProjectType.js",
       "PackagePath": "staticwebassets/js/ProjectType.js"
     },

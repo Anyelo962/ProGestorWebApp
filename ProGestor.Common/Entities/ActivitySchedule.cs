@@ -9,4 +9,7 @@ public class ActivitySchedule: BaseEntity
     public DateTime EndDate { get; set; }
     public double EstimatedCost { get; set; }
     
+    public bool Status { get; set; }
+
+    
 }

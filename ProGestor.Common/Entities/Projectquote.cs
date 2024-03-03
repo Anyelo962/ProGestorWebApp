@@ -9,4 +9,6 @@ public class Projectquote: BaseEntity
     public double MaterialEstimation { get; set; }
     public double LaborEstimation { get; set; }
     public double OtherExpenses { get; set; }
+    public bool Status { get; set; }
+
 }

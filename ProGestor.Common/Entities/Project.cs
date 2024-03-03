@@ -10,6 +10,7 @@ public class Project: BaseEntity
     public DateTime DateProjectEnd { get; set; }
     public int StatusProjectId { get; set; }
     public StatusProject StatusProject { get; set; }
+    public bool Status { get; set; }
     public double quoter { get; set; } 
     public ICollection<PaymentAdvance> PaymentAdvances { get; set; }
     public ICollection<Invoice> Invoices { get; set; }

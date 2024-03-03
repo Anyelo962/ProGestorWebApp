@@ -7,5 +7,6 @@ public class StatusProject: BaseEntity
         ProgProjects = new List<Project>();
     }
     public string name { get; set; }
+    public bool Status { get; set; }
     public ICollection<Project> ProgProjects { get; set; }
 }

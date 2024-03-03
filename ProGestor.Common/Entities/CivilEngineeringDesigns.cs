@@ -6,4 +6,6 @@ public class CivilEngineeringDesigns: BaseEntity
     public Project Project { get; set; }
     public string DesignName { get; set; }
     public byte [] Document { get; set; }
+    public bool Status { get; set; }
+
 }

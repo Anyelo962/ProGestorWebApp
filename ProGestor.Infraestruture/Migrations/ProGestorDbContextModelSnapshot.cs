@@ -179,11 +179,14 @@ namespace ProGestor.Infraestruture.Migrations
                     b.Property<DateTime>("StartDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
+
                     b.HasKey("Id");
 
                     b.HasIndex("ProjectId");
 
-                    b.ToTable("ActivitySchedule");
+                    b.ToTable("ActivitySchedules");
                 });
 
             modelBuilder.Entity("ProGestor.Common.Entities.Address", b =>
@@ -196,6 +199,9 @@ namespace ProGestor.Infraestruture.Migrations
 
                     b.Property<int>("CityId")
                         .HasColumnType("int");
+
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
 
                     b.Property<string>("houseNumber")
                         .IsRequired()
@@ -219,6 +225,9 @@ namespace ProGestor.Infraestruture.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
 
                     b.Property<string>("name")
                         .IsRequired()
@@ -247,6 +256,9 @@ namespace ProGestor.Infraestruture.Migrations
 
                     b.Property<int>("ProjectId")
                         .HasColumnType("int");
+
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
 
                     b.HasKey("Id");
 
@@ -305,11 +317,14 @@ namespace ProGestor.Infraestruture.Migrations
                     b.Property<int>("ProjectId")
                         .HasColumnType("int");
 
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
+
                     b.HasKey("Id");
 
                     b.HasIndex("ProjectId");
 
-                    b.ToTable("Invoice");
+                    b.ToTable("Invoices");
                 });
 
             modelBuilder.Entity("ProGestor.Common.Entities.PaymentAdvance", b =>
@@ -332,11 +347,14 @@ namespace ProGestor.Infraestruture.Migrations
                     b.Property<double>("RemainingBalance")
                         .HasColumnType("float");
 
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
+
                     b.HasKey("Id");
 
                     b.HasIndex("ProjectId");
 
-                    b.ToTable("PaymentAdvance");
+                    b.ToTable("PaymentAdvances");
                 });
 
             modelBuilder.Entity("ProGestor.Common.Entities.Project", b =>
@@ -355,6 +373,9 @@ namespace ProGestor.Infraestruture.Migrations
 
                     b.Property<int>("ProjectTypeId")
                         .HasColumnType("int");
+
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
 
                     b.Property<int>("StatusProjectId")
                         .HasColumnType("int");
@@ -396,11 +417,14 @@ namespace ProGestor.Infraestruture.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
+
                     b.HasKey("Id");
 
                     b.HasIndex("ProjectId");
 
-                    b.ToTable("ProjectTracking");
+                    b.ToTable("ProjectTrackings");
                 });
 
             modelBuilder.Entity("ProGestor.Common.Entities.ProjectType", b =>
@@ -410,6 +434,9 @@ namespace ProGestor.Infraestruture.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
 
                     b.Property<string>("description")
                         .IsRequired()
@@ -424,6 +451,36 @@ namespace ProGestor.Infraestruture.Migrations
                     b.ToTable("ProjectTypes");
                 });
 
+            modelBuilder.Entity("ProGestor.Common.Entities.Projectquote", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<double>("LaborEstimation")
+                        .HasColumnType("float");
+
+                    b.Property<double>("MaterialEstimation")
+                        .HasColumnType("float");
+
+                    b.Property<double>("OtherExpenses")
+                        .HasColumnType("float");
+
+                    b.Property<int>("ProjectId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProjectId");
+
+                    b.ToTable("Projectquotes");
+                });
+
             modelBuilder.Entity("ProGestor.Common.Entities.StatusProject", b =>
                 {
                     b.Property<int>("Id")
@@ -431,6 +488,9 @@ namespace ProGestor.Infraestruture.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
 
                     b.Property<string>("name")
                         .IsRequired()
@@ -488,6 +548,9 @@ namespace ProGestor.Infraestruture.Migrations
 
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
 
                     b.Property<bool>("TwoFactorEnabled")
                         .HasColumnType("bit");
@@ -665,6 +728,17 @@ namespace ProGestor.Infraestruture.Migrations
                 {
                     b.HasOne("ProGestor.Common.Entities.Project", "Project")
                         .WithMany("ProjectTrackings")
+                        .HasForeignKey("ProjectId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Project");
+                });
+
+            modelBuilder.Entity("ProGestor.Common.Entities.Projectquote", b =>
+                {
+                    b.HasOne("ProGestor.Common.Entities.Project", "Project")
+                        .WithMany()
                         .HasForeignKey("ProjectId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();

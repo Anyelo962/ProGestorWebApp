@@ -7,4 +7,6 @@ public class PaymentAdvance: BaseEntity
     public DateTime PaymentDate { get; set; }
     public double AmountPaid { get; set; }
     public double RemainingBalance { get; set; }
+    public bool Status { get; set; }
+
 }

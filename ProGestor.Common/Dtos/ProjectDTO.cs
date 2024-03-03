@@ -10,4 +10,5 @@ public class ProjectDTO
     public DateTime DateProjectEnd { get; set; }
     public string StatusProjectName { get; set; }
     public double Quoter { get; set; }
+    public bool Status { get; set; }
 }

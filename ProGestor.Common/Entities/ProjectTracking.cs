@@ -6,4 +6,6 @@ public class ProjectTracking:BaseEntity
     public Project Project { get; set; }
     public string ActivityPerformed { get; set; }
     public string ProjectStatus { get; set; }
+    public bool Status { get; set; }
+
 }
