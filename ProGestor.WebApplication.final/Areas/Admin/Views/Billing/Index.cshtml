@@ -1,0 +1,114 @@
+@model List<ProGestor.Common.Dtos.ProjectDTO>
+@{
+	ViewData["Title"] = "Proyectos";
+	ViewData["Caption"] = "Listado de proyectos";
+}
+
+<div class="content-body default-height">
+    <div class="container-fluid">
+        <div class="page-titles">
+    		<ol class="breadcrumb">
+    			<li class="breadcrumb-item"><a href="javascript:void(0)">Proyectos</a></li>
+    			<li class="breadcrumb-item active"><a href="javascript:void(0)">Listado de proyectos</a></li>
+    		</ol>
+        </div>
+        <!-- row -->
+        <div class="row">
+    		<div class="col-12">
+    			<div class="card">
+    				<div class="card-header">
+    					<h4 class="card-title">Proyectos</h4>
+    				</div>
+    				<div class="card-body">
+    					<div class="table-responsive">
+    						<table id="example5" class="display" style="min-width: 845px">
+    							<thead>
+    								<tr>
+    									<th>
+    										<div class="form-check custom-checkbox ms-2">
+    											<input type="checkbox" class="form-check-input" id="checkAll" required="">
+    											<label class="form-check-label" for="checkAll"></label>
+    										</div>
+    									</th>
+    									<th>Codigo</th>
+    									<th>Descripción del proyecto</th>
+    									<th>Cliente</th>
+    									<th>Monto pagado</th>
+    									<th>Tipo de método</th>
+									    <th>Fecha de pago</th>
+									    <th class="text-end">Acción</th>
+    								</tr>
+    							</thead>
+							    <tbody>
+							    
+							    @* @foreach (var item in Model.ToList()) *@
+							    @* { *@
+								   @*  <tr> *@
+									  @*   <td> *@
+										 @*    <div class="form-check custom-checkbox ms-2"> *@
+											@*     <input type="checkbox" class="form-check-input" id="customCheckBox3" required=""> *@
+											@*     <label class="form-check-label" for="customCheckBox3"></label> *@
+										 @*    </div> *@
+									  @*   </td> *@
+									  @*   <td></td> *@
+									  @*   <td>@item</td> *@
+									  @*   <td></td> *@
+									  @*   <td>@item</td> *@
+									  @*   <td>@item</td> *@
+									  @*   <td></td> *@
+									  @*   <td> *@
+										 @*    @{ string text = "completado";} *@
+										 @*    <span class="badge light badge-warning"> *@
+											@*     <i class="fa fa-circle text-warning me-1"></i> *@
+											@*     @text *@
+										 @*    </span> *@
+									  @*   </td> *@
+									  @*   $1$ <td> #1# *@
+										 @*   $1$  <div class="dropdown ms-auto text-end c-pointer"> #1# *@
+											@*   $1$   <div class="btn-link" data-bs-toggle="dropdown"> #1# *@
+											@* 	 $1$    <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><circle fill="#000000" cx="5" cy="12" r="2"></circle><circle fill="#000000" cx="12" cy="12" r="2"></circle><circle fill="#000000" cx="19" cy="12" r="2"></circle></g></svg> #1# *@
+											@*   $1$   </div> #1# *@
+											@*   $1$   <div class="dropdown-menu dropdown-menu-end"> #1# *@
+											@* 	 $1$    <a class="dropdown-item" href="#"></a> #1# *@
+											@* 	 $1$    <a class="dropdown-item" ></a> #1# *@
+											@* 	 $1$    <a class="dropdown-item remove_project" href="#">Eliminar</a> #1# *@
+											@*   $1$   </div> #1# *@
+										 @*   $1$  </div> #1# *@
+									  @*   $1$ </td> #1# *@
+								   @*  </tr> *@
+							    @* } *@
+							    </tbody>
+    						</table>
+    					</div>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    </div>
+ </div>
+ <!--**********************************
+	Content body end
+***********************************-->
+@section gymove_style
+	{
+	<!-- Start Page Level CSS -->
+	<!-- Datatable -->
+	<link href="~/gymove/vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
+	<!-- End Page Level CSS -->
+}
+
+@section gymove_script
+	{
+	<!--**********************************
+		Scripts
+	***********************************-->
+    <!-- Required vendors -->
+    <script src="~/gymove/vendor/global/global.min.js"></script>
+    <script src="~/gymove/vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
+
+    <!-- Datatable -->
+    <script src="~/gymove/vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="~/gymove/js/plugins-init/datatables.init.js"></script>
+    <script src="~/gymove/js/custom.min.js"></script>
+    <script src="~/gymove/js/deznav-init.js"></script>
+}

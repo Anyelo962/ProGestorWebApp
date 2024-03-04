@@ -31,6 +31,7 @@ builder.Services.AddTransient<IGenderRepository, GenderRepository>();
 builder.Services.AddTransient<IStatusProjectRepository, StatusProjectRepository>();
 builder.Services.AddTransient<IProjectTypeRepository, ProjectTypeRepository>();
 builder.Services.AddTransient<IProjectRepository, ProjectRepository>();
+builder.Services.AddTransient<IInvoiceRepository, InvoiceRepository>();
 
 builder.Services.AddIdentity<User, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = false)
     .AddEntityFrameworkStores<ProGestorDbContext>()

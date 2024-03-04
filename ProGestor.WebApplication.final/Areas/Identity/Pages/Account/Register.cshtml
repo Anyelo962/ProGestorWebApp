@@ -23,7 +23,15 @@
                                             <div class="text-center mb-3">
                                                 <a><img src="~/gymove/images/engineers.png" alt=""></a>
                                             </div>
-                                            <h4 class="text-center mb-4 ">Crear mi cuenta</h4>
+                                            @if (User.IsInRole(Rols.Admin))
+                                            {
+                                                <h4 class="text-center mb-4 ">Crear cuenta</h4>
+                                            }
+                                            else
+                                            {
+                                                <h4 class="text-center mb-4 ">Crear mi cuenta</h4>
+                                            }
+                                          
                                             <div class="form-group">
                                                 <label asp-for="Input.firstName" class="mb-1 form-label">Nombre de usuario</label> 
                                                 <input asp-for="Input.firstName" class="form-control" placeholder="Nombre de usuario"/>
@@ -91,8 +99,8 @@
                                                 <span asp-validation-for="Input.ConfirmPassword"></span>
                                             </div>
                                              
-                                            @* @if (User.IsInRole(Rols.Admin)) *@
-                                            @* { *@
+                                            @if (User.IsInRole(Rols.Admin))
+                                            {
                                                 <div class="form-group">
                                                     <label>Seleccione el rol</label>
                                                     <select asp-for="Input.SelectedRole" class="form-control default-select" id="sel1">
@@ -101,16 +109,29 @@
                                                         <option name="rol_name" value="@Rols.Client">Cliente</option>
                                                     </select>
                                                 </div>
-                                            @* } *@
+                                             }
                                             
-                                            <div class="text-center mt-4">
-                                                <button type="submit" class="btn btn-primary light  btn-block mb-3">Registrarme</button>
-                                            </div>
+                                            @if (User.IsInRole(Rols.Admin))
+                                            {
+                                                <div class="text-center mt-4">
+                                                    <button type="submit" class="btn btn-primary light  btn-block mb-3">Registrar</button>
+                                                </div>
+                                            }
+                                            else
+                                            {
+                                                <div class="text-center mt-4">
+                                                    <button type="submit" class="btn btn-primary light  btn-block mb-3">Registrarme</button>
+                                                </div>
+                                            }
+                                          
                                             
-                                            <div class="text-center">
-                                                <button asp-page="./Login" asp-route-returnUrl="@Model.ReturnUrl" class="btn btn-primary light btn-block">Iniciar sesión</button>
-                                            </div>
-                                            
+                                            @if (!User.IsInRole(Rols.Admin))
+                                            {
+                                                <div class="text-center">
+                                                    <button asp-page="./Login" asp-route-returnUrl="@Model.ReturnUrl" class="btn btn-primary light btn-block">Iniciar sesión</button>
+                                                </div>
+                                            }
+                             
                                         </div>
                                     </div>
                                 </div>

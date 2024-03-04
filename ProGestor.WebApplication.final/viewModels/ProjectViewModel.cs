@@ -15,5 +15,6 @@ public class ProjectViewModel
     public DateTime DateProjectStart { get; set; }
     public DateTime DateProjectEnd { get; set; }
     public int StatusProjectId { get; set; }
+    public double quoter { get; set; } 
 
 }

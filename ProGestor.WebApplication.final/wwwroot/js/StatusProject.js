@@ -71,10 +71,6 @@ $(document).ready(function () {
                 })
             }
         });
-        
-        
-        
-        
     })
     
     

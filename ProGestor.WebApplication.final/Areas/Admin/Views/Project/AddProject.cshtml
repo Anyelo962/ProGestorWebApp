@@ -4,120 +4,119 @@
     ViewData["Title"] = "Proyectos";
     ViewData["Caption"] = "Crear proyecto";
 }
-<!--**********************************
-	Content body start
-***********************************-->
+
 <div class="content-body default-height">
-    <div class="container-fluid">
-        <div class="page-titles">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="javascript:void(0)">Proyecto</a></li>
-                <li class="breadcrumb-item active"><a href="javascript:void(0)">Crear proyecto</a></li>
-            </ol>
+    <form asp-area="Admin" asp-action="AddProject" asp-controller="Project" type="post">
+        <div class="container-fluid">
+            <div class="page-titles">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="javascript:void(0)">Proyecto</a></li>
+                    <li class="breadcrumb-item active"><a href="javascript:void(0)">Crear proyecto</a></li>
+                </ol>
+            </div>
+            <div class="row">
+                <div class="col-xl-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="mb-4">
+                                <h4 class="card-title">Seleccione cliente</h4>
+                            </div>
+                            <select id="single-select" name="UserId" style="width:100%;">
+                                <option value="">Seleccione cliente</option>
+                                @foreach (var item in Model.Users)
+                                {
+                                    <option value="@item.Id">@item.firstName @item.lastName</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="mb-4">
+                                <h4 class="card-title">Tipo de proyecto</h4>
+                            </div>
+
+                            <select id="dropdown-placement" name="ProjectTypeId" style="width:100%;">
+                                <option>Seleccione el tipo de proyecto</option>
+                                @foreach (var item in Model.ProjectTypes)
+                                {
+                                    <option value="@item.Id">@item.name</option>
+                                }
+                            </select>
+                            <div id="select2-modal">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="mb-4">
+                                <h4 class="card-title">Seleccione el estado</h4>
+                            </div>
+
+                            <select class="single-select-placeholder js-states" name="StatusProjectId" style="width:100%;">
+
+                                <option value="">Seleccione el estado</option>
+                                @foreach (var item in Model.StatusProjects)
+                                {
+                                    <option value="@item.Id">@item.name</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6">
+                    <!-- Card -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">Fecha de inicio</h4>
+                        </div>
+                        <div class="card-body">
+                            <input name="DateProjectStart" class="datepicker-default form-control" id="datepicker">
+                        </div>
+                    </div>
+                    <!-- Card -->
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xl-6">
+                    <!-- Card -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">Fecha de cierre</h4>
+                        </div>
+                        <div class="card-body">
+                            <input name="DateProjectEnd" class="datepicker-default form-control" id="datepicker">
+                        </div>
+                    </div>
+                    <!-- Card -->
+                </div>
+
+                <div class="col-xl-6 col-lg-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">Ingrese presupuesto</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="basic-form">
+                                    <div class="form-group">
+                                        <input type="number" name="quoter" class="form-control input-default " placeholder="$15350.50">
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-rounded btn-outline-primary float-right">Guardar</button>
         </div>
-        <div class="row">
-            <div class="col-xl-6">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="mb-4">
-                            <h4 class="card-title">Seleccione cliente</h4>
-                        </div>
-                        <select id="single-select" style="width:100%;">
-                            <option value="">Seleccione cliente</option>
-                            @foreach (var item in Model.Users)
-                            {
-                                <option value="@item.Id">@item.firstName</option>
-                            }
-                        </select>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-xl-6">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="mb-4">
-                            <h4 class="card-title">Tipo de proyecto</h4>
-                        </div>
-            
-                        <select id="dropdown-placement" style="width:100%;">
-                            <option value="AL">Seleccione el tipo de proyecto</option>
-                            @foreach (var item in Model.ProjectTypes)
-                            {
-                                <option value="@item.Id">@item.name</option>
-                            }
-                        </select>
-                        <div id="select2-modal">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xl-6">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="mb-4">
-                            <h4 class="card-title">Seleccione el estado</h4>
-                        </div>
-         
-                        <select class="single-select-placeholder js-states" style="width:100%;">
-         
-                            <option value="">Seleccione el estado</option>
-                            @foreach (var item in Model.StatusProjects)
-                            {
-                                <option value="@item.Id">@item.name</option>
-                            }
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-6">
-                <!-- Card -->
-                <div class="card">
-                    <div class="card-header">
-                        <h4 class="card-title">Fecha de inicio</h4>
-                    </div>
-                    <div class="card-body">
-                        <input name="datepicker" class="datepicker-default form-control" id="datepicker">
-                    </div>
-                </div>
-                <!-- Card -->
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-xl-6">
-                <!-- Card -->
-                <div class="card">
-                    <div class="card-header">
-                        <h4 class="card-title">Fecha de cierre</h4>
-                    </div>
-                    <div class="card-body">
-                        <input name="datepicker" class="datepicker-default form-control" id="datepicker">
-                    </div>
-                </div>
-                <!-- Card -->
-            </div>
-            
-            <div class="col-xl-6 col-lg-6">
-                <div class="card">
-                    <div class="card-header">
-                        <h4 class="card-title">Ingrese presupuesto</h4>
-                    </div>
-                    <div class="card-body">
-                        <div class="basic-form">
-                            <form>
-                                <div class="form-group">
-                                    <input type="text" class="form-control input-default " placeholder="$15350.50">
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    </form>
 </div>
 
 

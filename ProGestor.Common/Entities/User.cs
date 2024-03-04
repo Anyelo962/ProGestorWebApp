@@ -9,6 +9,7 @@ public class User: IdentityUser
     public int genderId { get; set; }
     public Gender Gender { get; set; }
     public string numberPhone { get; set; }
+    public bool Status { get; set; }
     public int CityId { get; set; }
     public City City { get; set; }
     public ICollection<Project> Projects { get; set; }
